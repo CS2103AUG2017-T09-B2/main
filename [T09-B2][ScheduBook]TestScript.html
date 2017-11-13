@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.3">
+<title>Test Script for Manual Testing</title>
+<link rel="stylesheet" href="stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>Test Script for Manual Testing</h1>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="loading-the-sampledata-xml-file"><a class="link" href="#loading-the-sampledata-xml-file">Loading the SampleData.xml file</a></h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Take note of the directory location of SampleData.xml</p>
+</li>
+<li>
+<p>Copy SampleData.xml and paste it into /data</p>
+</li>
+<li>
+<p>Rename the SampleData.xml to addressBook.xml</p>
+</li>
+</ol>
+</div>
+<div style="page-break-after: always;"></div>
+<div class="sect2">
+<h3 id="test-cases"><a class="link" href="#test-cases">Test cases</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<colgroup>
+<col style="width: 30%;">
+<col style="width: 70%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Input</th>
+<th class="tableblock halign-left valign-top">Expected Output</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">run ScheduBook.jar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(Expected reminder pop up about meeting with David Li on 23:59 for Dinner)
+<br>
+ *note that this occurrence only happen if test is done on 17-11-2017, the preset meeting triggering this pop-up reminder in SampleData.xml will be deleted</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Press 'Enter'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Pop up closes</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add n/test user p/96969696 e/user@gmail.com a/NUS School of Computing t/Tester</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New person added: test user Phone: 96969696 Email: <a href="mailto:user@gmail.com">user@gmail.com</a> Address: NUS School of Computing Tags: [Tester]</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">addmeeting i/1 n/Dinner d/12-01-2019 15:00 l/Clementi Mall t/1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New meeting added: Dinner<br>
+                                                         Meeting with: Alex Yeoh<br>
+                                                         Contact Number: 87438807<br>
+                                                         Date and Time: 12-01-2019 15:00<br>
+                                                         Location: Clementi Mall</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">am i/1 2 n/Shopping d/15-01-2019 15:00 l/Clementi Mall t/2</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New meeting added: Shopping<br>
+                                                        Meeting with: Group<br>
+                                                        Date and Time: 15-01-2019 15:00<br>
+                                                        Location: Clementi Mall<br>
+                                                       (Notice the 'Alert' sign to show high importance)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undo success!</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">redo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Redo success!</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">am i/3 n/Soccer d/15-01-2019 15:00 l/NUS field t/1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Meeting Clashes! Please choose another date and time.(No meeting will be added)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">am i/2 n/Dinner d/17-01-2019 15:00 l/Clementi Mall t/0</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New meeting added: Dinner<br>
+                                                        Meeting with: Bernice Yu<br>
+                                                        Contact Number: 99272758<br>
+                                                        Date and Time: 17-01-2019 15:00<br>
+                                                        Location: Clementi Mall<br>
+                                                        (Notice the 'thumb down' sign to show low importance)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">findmeeting Shopping</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">1 meetings listed!</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">editmeeting 1 n/Project Meeting l/NUS Faculty of Engineering</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edited Meeting: Project Meeting<br>
+                                                              Meeting with: Group<br>
+                                                              Date and Time: 15-01-2019 15:00<br>
+                                                              Location: NUS Faculty of Engineering</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">findexactmeeting Alex Yeoh</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">4 meetings listed!</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">listmeeting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Listed all meetings</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">addmeeting i/2 n/Birthday Party d/17-07-2019 19:00 l/Hillview Condominium t/1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">New meeting added: Birthday Party<br>
+                                                                               Meeting with: Bernice Yu<br>
+                                                                               Contact Number: 99272758<br>
+                                                                               Date and Time: 17-07-2019 19:00<br>
+                                                                               Location: Hillview Condominium</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selectmeeting 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Selected Meeting: 1(Note that browser panel now loads google map to the destination of scheduled meeting)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit 1 n/Alex Tan p/99999999</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edited Person: Alex Tan Phone: 99999999 Email: <a href="mailto:alexyeoh@example.com">alexyeoh@example.com</a> Address: Blk 30 Geylang Street 29, #06-40 Tags: [friends]
+ <br>
+(Notice at the meeting card that 'Alex Yeoh' changed to 'Alex Tan', the phone number have also changed)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deletemeeting 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete meeting: Dinner<br>
+                 Meeting with: Alex Tan<br>
+                 Contact Number: 99999999<br>
+                 Date and Time: 12-01-2019 15:00<br>
+                 Location: Clementi Mall</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Deleted Person: Alex Tan Phone: 99999999 Email: <a href="mailto:alexyeoh@example.com">alexyeoh@example.com</a> Address: Blk 30 Geylang Street 29, #06-40 Tags: [friends]
+<br>
+(Note that the all meetings with Alex is deleted)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undo success!</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">select 1</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(A pop-up window "Contact Details" will show with the information of Alex Tan)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Press 'Enter'</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">(to close the pop up)</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">exit(and change system time to year 2020)</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">run ScheduBook.jar again</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Observe that the meetings added before 2020 is deleted</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2017-11-13 13:53:54 +00:00
+</div>
+</div>
+</body>
+</html>
