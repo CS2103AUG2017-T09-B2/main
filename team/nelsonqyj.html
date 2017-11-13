@@ -16,10 +16,18 @@
 </div>
 <div id="content">
 <div class="sect1">
+<h2 id="purpose"><a class="link" href="#purpose">Purpose</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The Project Portfolio Page introduces the application, <em>ScheduBook</em>, and highlights the contributions that Nelson Quek Yee Jiel have done for the <em>ScheduBook</em>. It includes the implementation and justification for each enhancement implemented, as well as proposed future enhancements and other relevant contributions.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
 <h2 id="project-schedubook"><a class="link" href="#project-schedubook">Project: ScheduBook</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p><em>ScheduBook</em> a desktop address book application intended for students to plan and schedule their meetings with their peers, tutors or professors. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 9 kLoC(Lines of Code).</p>
+<p><em>ScheduBook</em> a desktop address book application designed primarily for University students to plan and schedule their meetings with their peers, tutors or professors. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 9 kLoC(Lines of Code).</p>
 </div>
 <div class="paragraph">
 <p>This project is a product of the module, Software Engineering, CS2103T, in NUS. <em>ScheduBook</em> is proudly developed by my team based on <a href="https://github.com/se-edu/addressbook-level4">AddressBook(Level4)</a>, and by <a href="https://se-edu.github.io/">SE-EDU</a> team, whose initial address book application was created to be used for teaching Software Engineering principles.</p>
@@ -28,7 +36,7 @@
 <p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103AUG2017-T09-B2/main/blob/master/collated/main/nelsonqyj.md">Functional code</a>] [<a href="https://github.com/CS2103AUG2017-T09-B2/main/blob/master/collated/test/nelsonqyj.md">Test code</a>] {give links to collated code files}</p>
 </div>
 <div class="sect2">
-<h3 id="enhancement-added-addmeeting-selectmeeting-googlemaps"><a class="link" href="#enhancement-added-addmeeting-selectmeeting-googlemaps">Enhancement Added: AddMeeting, SelectMeeting, GoogleMaps</a></h3>
+<h3 id="enhancement-added-addmeeting-command"><a class="link" href="#enhancement-added-addmeeting-command">Enhancement Added: AddMeeting command</a></h3>
 <div class="sect3">
 <h4 id="external-behavior"><a class="link" href="#external-behavior">External behavior</a></h4>
 <hr>
@@ -113,7 +121,7 @@ Input format for <code>IMPORTANCE</code> is 0-2.
 </li>
 <li>
 <p>When you are attempting to add a meeting with the same date and time as a pre-existing one in ScheduBook, the following
-error will be shown, preventing you from having 2 different meetings with exactly the same date and time</p>
+error will be shown, preventing you from creating 2 different meetings with exactly the same date and time</p>
 <div class="imageblock">
 <div class="content">
 <img src="../images/MeetingClash.png" alt="MeetingClash" width="500">
@@ -139,6 +147,85 @@ error will be shown, preventing you from having 2 different meetings with exactl
 <p><code>addmeeting i/1 2 3 n/Project meeting d/27-12-2017 08:30 l/iCube Auditorium, NUS t/2</code></p>
 </li>
 </ul>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification"><a class="link" href="#justification">Justification</a></h4>
+<div class="paragraph">
+<p>There is a need for users, especially University students, to properly plan their important meetings. The need becomes more apparent for
+students as they are constantly occupied with enormous amount of commitments and deadlines.
+Hence, it becomes tedious for them to recall each and every meeting that they might have planned ahead of time. Thus, the <code>addmeeting</code> feature is implemented to allow users
+to create meetings effortlessly with existing contacts and to be conveniently reminded of the meeting when it is due. Users will also have the choice to flag the importance of each meeting and this would help to save time
+when scrolling through the meeting list to search for urgent and important meetings. Last but not least, users will be prompted of a meeting clash whenever an attempt to add conflicting meeting arises. In conclusion, this feature
+addresses the need for users to properly organize their meetings as well as getting reminders for each of the upcoming meeting.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-meeting"><a class="link" href="#add-meeting">Add Meeting</a></h3>
+<div class="paragraph">
+<p>The add meeting command inherits from UndoableCommand which allows user to add meeting with the following parameters: 'INDEX' of person in the last person listing,
+'Name' of Meeting, 'Date and Time' of Meeting, 'Location' of Meeting, and lastly, 'Importance' of Meeting.</p>
+</div>
+<div class="paragraph">
+<p>Implementation:</p>
+</div>
+<div class="paragraph">
+<p>When the <code>addmeeting</code> command is called with the appropriate parameters, an instance of the <code>Meeting</code> object is created with the
+corresponding parameters. For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">addmeeting <span class="integer">7</span> n/Shopping d/<span class="integer">31</span>-<span class="integer">10</span>-<span class="integer">2017</span> <span class="integer">16</span>:<span class="octal">00</span> l/Hillion Mall t/<span class="integer">1</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Creates an object with the following parameters</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">MeetingName: Shopping
+DateTime: <span class="integer">31</span>-<span class="integer">10</span>-<span class="integer">2017</span> <span class="integer">16</span>:<span class="octal">00</span>
+PersonName: Alex Yeo
+PhoneNum: <span class="integer">87438807</span>
+Location: Hillion Mall
+MeetingTag: <span class="integer">1</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Furthermore, the <code>INDEX</code> of person provided would allow the newly-created <code>Meeting</code> object to get the name as well as phone number
+of the corresponding contact as shown in the example above.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram below shows how AddMeeting operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/addMeetingSequenceDiagram.png" alt="addMeetingSequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.5.1 : Sequence diagram of Add Meeting</em></p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-selectmeeting-command-googlemaps"><a class="link" href="#enhancement-added-selectmeeting-command-googlemaps">Enhancement Added: SelectMeeting command, GoogleMaps</a></h3>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
 </div>
 </div>
 <div class="sect2">
@@ -196,8 +283,8 @@ Selects the 1st meeting in the results of the <code>findmeeting</code> command.<
 <div class="sect2">
 <h3 id="loading-of-meeting-location-in-google-maps"><a class="link" href="#loading-of-meeting-location-in-google-maps">Loading of Meeting Location in Google Maps</a></h3>
 <div class="paragraph">
-<p>Upon selecting a meeting, the location of meeting will be automatically entered as the destination in Google Maps. The detailed navigational route and directions can be obtained thereafter.
-The screenshot below shows the loaded Google Maps upon entering the <code>selectmeeting</code> command.</p>
+<p>Upon selecting a meeting, the location of your meeting will be automatically entered as the destination in Google Maps. You can then obtain the detailed navigational route and directions.
+The screenshot below shows you the loaded Google Maps upon entering the <code>selectmeeting</code> command.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -210,73 +297,22 @@ The screenshot below shows the loaded Google Maps upon entering the <code>select
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
 </div>
-<hr>
 <div class="sect3">
-<h4 id="justification"><a class="link" href="#justification">Justification</a></h4>
+<h4 id="justification-2"><a class="link" href="#justification-2">Justification</a></h4>
 <div class="paragraph">
-<p>{Justify the need for, and the current design (i.e. external behavior) of, the feature}</p>
-</div>
-<div class="paragraph">
-<p>There is a need for users, especially students, to properly plan their important meetings. Thus, the addmeeting feature is implemented to allow users
-to create meetings with existing contacts and to be reminded of the meeting when it is due. Furthermore, by using the
-selectmeeting command, the location of the meeting will be automatically loaded into Google Maps as the destination and all the user
+<p>University Students in the modernised era often find themselves travelling to multiple locations daily to meet people for various reasons.
+Thus, in order to reduce the user&#8217;s need to toggle between navigational applications and our application, Google Maps is integrated into our application for their convenience.
+By using the <code>selectmeeting</code> command, the location of the meeting will be automatically loaded into Google Maps as the destination and all the user
 needs to do is just to input their current location and the directions to the meeting location will be shown. This allows the
 user to properly plan their time needed and route to meeting locations.</p>
 </div>
 </div>
 <div class="sect3">
-<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
 <hr>
 <div class="paragraph">
 <p><mark>Start of Extract [from: Developer Guide]</mark></p>
 </div>
-</div>
-</div>
-<div class="sect2">
-<h3 id="add-meeting"><a class="link" href="#add-meeting">Add Meeting</a></h3>
-<div class="paragraph">
-<p>The add meeting command inherits from UndoableCommand which allows user to add meeting with the following parameters: 'INDEX' of person in the last person listing,
-'Name' of Meeting, 'Date and Time' of Meeting, 'Location' of Meeting, and lastly, 'Importance' of Meeting.</p>
-</div>
-<div class="paragraph">
-<p>Implementation:</p>
-</div>
-<div class="paragraph">
-<p>When the <code>addmeeting</code> command is called with the appropriate parameters, an instance of the <code>Meeting</code> object is created with the
-corresponding parameters. For example,</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">addmeeting <span class="integer">7</span> n/Shopping d/<span class="integer">31</span>-<span class="integer">10</span>-<span class="integer">2017</span> <span class="integer">16</span>:<span class="octal">00</span> l/Hillion Mall t/<span class="integer">1</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Creates an object with the following parameters</p>
-</div>
-<div class="listingblock">
-<div class="content">
-<pre class="CodeRay highlight"><code data-lang="java">MeetingName: Shopping
-DateTime: <span class="integer">31</span>-<span class="integer">10</span>-<span class="integer">2017</span> <span class="integer">16</span>:<span class="octal">00</span>
-PersonName: Alex Yeo
-PhoneNum: <span class="integer">87438807</span>
-Location: Hillion Mall
-MeetingTag: <span class="integer">1</span></code></pre>
-</div>
-</div>
-<div class="paragraph">
-<p>Furthermore, the <code>INDEX</code> of person provided would allow the newly-created <code>Meeting</code> object to get the name as well as phone number
-of the corresponding contact as shown in the example above.</p>
-</div>
-<div class="paragraph">
-<p>The following sequence diagram below shows how AddMeeting operation works:</p>
-</div>
-<div class="imageblock">
-<div class="content">
-<img src="../images/addMeetingSequenceDiagram.png" alt="addMeetingSequenceDiagram" width="800">
-</div>
-</div>
-<div class="paragraph">
-<p><em>Figure 5.5.1 : Sequence diagram of Add Meeting</em></p>
 </div>
 </div>
 <div class="sect2">
@@ -298,7 +334,7 @@ destination.</p>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Purpose and use for selecting a meeting<br>
 <strong>Alternative 1 (current implementation):</strong> Google Maps is loaded in the browser panel<br>
-<strong>Pros:</strong> Allows developer to make use of the already established maps.<br>
+<strong>Pros:</strong> Allows developer to make use of the already established Google Maps.<br>
 <strong>Cons:</strong> Requires user to input valid addresses instead of user-based inputs like "Alex&#8217;s Home".<br>
 <strong>Alternative 2 (future option):</strong> Allows user to choose what to load at the browser panel such as connecting to social media platforms to interact with meeting partners<br>
 <strong>Pros:</strong> Improve flexibility and choices to suit different needs of users.</p>
@@ -306,14 +342,19 @@ destination.</p>
 <div class="paragraph">
 <p><mark>End of Extract</mark></p>
 </div>
-<hr>
 </div>
 </div>
 <div class="sect2">
 <h3 id="enhancement-proposed-add-follow-up-meetings"><a class="link" href="#enhancement-proposed-add-follow-up-meetings">Enhancement Proposed: Add follow-up meetings</a></h3>
 <div class="paragraph">
-<p>Allows user to continue to add on from the original meeting which keeps track and archive the previous meeting details
+<p>This enhancement allows user to continue to add on from the original meeting which keeps track and archive the previous meeting details
 such as location and meeting partners.</p>
+</div>
+<div class="sect3">
+<h4 id="enhancement-proposed-to-drop-multiple-pins-on-google-maps-to-suggest-meeting-location-for-group-meetings"><a class="link" href="#enhancement-proposed-to-drop-multiple-pins-on-google-maps-to-suggest-meeting-location-for-group-meetings">Enhancement Proposed: To drop multiple pins on Google Maps to suggest meeting location for group meetings</a></h4>
+<div class="paragraph">
+<p>This enhancement allows user to make use of Google Maps&#8217;s ability to drop pins and find the most suitable meeting location for a group meeting.</p>
+</div>
 </div>
 </div>
 <div class="sect2">
@@ -321,10 +362,13 @@ such as location and meeting partners.</p>
 <div class="ulist">
 <ul>
 <li>
-<p>Updated the GUI color scheme (Pull requests <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/103" class="bare">https://github.com/CS2103AUG2017-T09-B2/main/pull/103</a>, <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/110" class="bare">https://github.com/CS2103AUG2017-T09-B2/main/pull/110</a>)</p>
+<p>Updated the GUI color scheme (Pull requests <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/103">#103</a>, <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/110">#110</a>)</p>
 </li>
 <li>
-<p>Wrote additional tests to improve coverage (Pull requests <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/125" class="bare">https://github.com/CS2103AUG2017-T09-B2/main/pull/125</a>, <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/127" class="bare">https://github.com/CS2103AUG2017-T09-B2/main/pull/127</a>)</p>
+<p>Wrote additional tests to improve coverage (Pull requests <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/125">#125</a>, <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/127">#127</a>)</p>
+</li>
+<li>
+<p>Carried out acceptance testing on other groups to discover bugs (Pull requests <a href="https://github.com/CS2103AUG2017-W13-B2/main/issues/111">#111</a>, <a href="https://github.com/CS2103AUG2017-W13-B2/main/issues/109">#109</a>, <a href="https://github.com/CS2103AUG2017-W13-B2/main/issues/103">#103</a>)</p>
 </li>
 </ul>
 </div>
@@ -340,7 +384,7 @@ such as location and meeting partners.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-13 12:44:07 +00:00
+Last updated 2017-11-13 12:44:36 +00:00
 </div>
 </div>
 </body>
