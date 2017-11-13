@@ -1,0 +1,455 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.3">
+<title>Melvin Leo - Project Portfolio</title>
+<link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>Melvin Leo - Project Portfolio</h1>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="project-schedubook"><a class="link" href="#project-schedubook">Project: ScheduBook</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>ScheduBook</em> is a desktop address book application that can be used by students or businessmen to better manage their schedules with their peers or acquaintances. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java and currently has about 9 kLoC.<br>
+<br>
+This project is a product of Software Engineering, CS2103T in NUS. <em>ScheduBook</em> is proudly developed by my team based on <a href="https://github.com/se-edu/addressbook-level4">AddressBook(Level4)</a>, by <a href="https://se-edu.github.io/">SE-EDU</a> team, initial address book application created to be used for teaching Software Engineering principles. Through this project, I gained insights on the work environment of software engineers and experienced how software engineers approach and contribute to a certain software development.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="purpose"><a class="link" href="#purpose">Purpose</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This project portfolio provides the contributions of Melvin Leo towards this project. Furthermore, it provide insights of the implementation of certain features that Melvin implemented in <em>ScheduBook</em>.</p>
+</div>
+<div class="paragraph">
+<p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103AUG2017-T09-B2/main/blob/master/collated/main/Melvin-leo.md">Functional code</a>] [<a href="https://github.com/CS2103AUG2017-T09-B2/main/blob/master/collated/test/Melvin-leo.md">Test code</a>]</p>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-meeting-class"><a class="link" href="#enhancement-added-meeting-class">Enhancement Added: Meeting Class</a></h3>
+<div class="sect3">
+<h4 id="external-behavior"><a class="link" href="#external-behavior">External behavior</a></h4>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="meeting-card"><a class="link" href="#meeting-card">Meeting Card</a></h3>
+<div class="paragraph">
+<p>The meeting card provides you the information of the meetings that you have scheduled. As you can see from the Figure 2, the <code>NameMeeting</code>, <code>DateTime</code>, <code>PersonToMeet</code>, <code>PhoneNum</code> and <code>Location</code> are all shown to remind you of your certain meeting.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/MeetingCard.png" alt="MeetingCard" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.1.1: Meeting Card</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="meeting-card-colours"><a class="link" href="#meeting-card-colours">Meeting Card Colours</a></h3>
+<div class="paragraph">
+<p>To show you the nearing of upcoming meetings, colours are assigned to the card by comparing the date and time in the meeting
+ class to the date and time of the log in. The meanings of the different assigned colours are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>darkRed</code> : Meeting is in next 24 hours.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/MeetingCard1.png" alt="MeetingCard1" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.2.1: Dark red Meeting Card</em></p>
+</div>
+</li>
+<li>
+<p><code>red</code> : Meeting is in next 48 hours.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/MeetingCard2.png" alt="MeetingCard2" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.2.2: Red Meeting Card</em></p>
+</div>
+</li>
+<li>
+<p><code>orangeRed</code> : Meeting is in next 72 hours.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/MeetingCard3.png" alt="MeetingCard3" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.2.3: Orange Meeting Card</em></p>
+</div>
+</li>
+</ul>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification"><a class="link" href="#justification">Justification</a></h4>
+<div class="paragraph">
+<p>For the ease of the user, the meeting cards are positioned and presented in such a way that the user can retrieve the information he/she wants immediately without much effort. The meeting cards are also sorted in chronological order so that the user can see the meetings that have higher urgency. Furthermore, the colours are also implemented for the user to keep track of his/her upcoming meetings. The name and the phone number of the person who the user will be meeting are shown so that if needed, the user can contact that person with ease.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="implementing-meeting-class"><a class="link" href="#implementing-meeting-class">Implementing Meeting Class</a></h3>
+<div class="paragraph">
+<p>The Meeting class is a new class just like the Person class, which resides inside <code>model</code>. It features commands that modifies the state of the address book
+such as <code>addmeeting</code>, <code>deletemeeting</code>, <code>editmeeting</code>, <code>listmeeting</code> and <code>findmeeting</code>.
+The attributes of Meeting class include <code>NameMeeting</code>, <code>DateTime</code>, <code>Place</code>, <code>Persons</code> and <code>MeetingTag</code>, as seen in the figure below.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/MeetingCLass.png" alt="MeetingCLass" width="300">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.4.1 Meeting Class</em></p>
+</div>
+<div class="paragraph">
+<p><code>Persons</code> are <code>ReadOnlyPerson</code> class from the contact list added by the users. In this meeting class, <code>List&lt;ReadOnlyPerson&gt; personsToMeet</code> are an object inside <code>Meeting</code> class which stores the information of the persons inside the class itself.</p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Creation of Meeting class<br>
+<strong>Alternative 1 (current choice):</strong> Input a person class in Meeting class to retrieve their name and phone number<br>
+<strong>Pros:</strong> Allows developers to be more flexible to implement with meeting class, also simplify the creation of group meetings <br>
+<strong>Cons:</strong> It is difficult to implement.
+<strong>Alternative 2:</strong> Meeting class that is created with 'PersonToMeet' and 'PhoneNum' class<br>
+<strong>Pros:</strong> Easy to implement<br>
+<strong>Cons:</strong> More codes for developers to write and change.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="meeting-card-2"><a class="link" href="#meeting-card-2">Meeting Card</a></h3>
+<div class="paragraph">
+<p>The implementation of meeting card starts of from creating 'Meeting' class which resides in the Model component of this application. This meeting card also requires the UI component for this cards to be properly shown to the users.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Firstly, the Meeting class is created with object properties like <code>MeetingName</code>, <code>DateTime</code>, <code>Place</code>, <code>PersonToMeet</code> and <code>PhoneNum</code> . We want all these object properties to facilitate the users' ability to retrieve these information of his/her scheduled meeting. This is handled by ModelManager.</p>
+</li>
+<li>
+<p>These object properties of the meeting class are assigned to the labels in the Meeting card of MeetingCard.java, handled by UI manager.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/UiMeetingCardSequenceDiagram.png" alt="UiMeetingCardSequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.12.1 : Sequence diagram of Ui of Meeting Card</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>The list of meeting cards are assigned to the panel at the right of the program. The list are created with 'UniqueMeetingList'. This list of meetings are always sorted according to date and time, with the nearest date and time first. The implementation of the sorting of this <code>Meeting</code> cards is by using lambda sort, where the <code>LocalDateTime</code> of the <code>DateTime</code> in <code>Meeting</code> are sorted.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/MeetingCard.png" alt="MeetingCard" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.12.2 : Meeting Card</em></p>
+</div>
+<div class="paragraph">
+<p>To show the urgency of the meeting, as you can see from the examples below, colours are assigned to the card by comparing the date and time in the meeting class to the date and time of the log in.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>darkRed</code> : Meeting is in next 24 hours.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/MeetingCard1.png" alt="MeetingCard1" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.12.3 : Meeting card that due within 24 hours</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>red</code> : Meeting is in next 48 hours.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/MeetingCard2.png" alt="MeetingCard2" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.12.4 : Meeting Card that due within 48 hours</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>orangeRed</code> : Meeting is in next 72 hours.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/MeetingCard3.png" alt="MeetingCard3" width="250">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.12.5 : Meeting Card that due within 72 hours</em></p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Ways to be implemented as a reminder of the urgency of the meeting<br>
+<strong>Alternative 1 (current choice):</strong> Colour is applied to meeting card<br>
+<strong>Pros:</strong> Easy to implement but further developers can enhance the colors easily.<br>
+<strong>Cons:</strong> Might not be as appealing to some users.<br>
+<strong>Alternative 2 (future choice):</strong> A pop-up reminder to show meeting on the current day and with the colours applied to meeting card<br>
+<strong>Pros:</strong> Will be a better reminder to users.</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-reminder-pop-up"><a class="link" href="#enhancement-added-reminder-pop-up">Enhancement Added: Reminder Pop up</a></h3>
+<div class="sect3">
+<h4 id="external-behavior-2"><a class="link" href="#external-behavior-2">External behavior</a></h4>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="meeting-alerts"><a class="link" href="#meeting-alerts">Meeting Alerts</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Reminder.png" alt="Reminder" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.3.1: Pop-up Notification</em></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Upon opening up the application, if there is a meeting(s) on the same day, you will be reminded via a pop-up message</p>
+</li>
+<li>
+<p>As shown to you in the figure 2, the information regarding the next upcoming meeting is displayed in the message</p>
+</li>
+</ol>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification-2"><a class="link" href="#justification-2">Justification</a></h4>
+<div class="paragraph">
+<p>This implementation further boosts our capability of reminding of <em>ScheduBook</em>. After implementing the meeting cards, we realised that despite the coloured card, there was no significant reminder that can really catch the eye of the users. However, this pop-up reminder is significant to a large extent and most of the details are shown to the user. Furthermore, the user will have to acknowledge the pop up before actually entering the application.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="meeting-pop-up-reminder"><a class="link" href="#meeting-pop-up-reminder">Meeting pop up reminder</a></h3>
+<div class="paragraph">
+<p>To maximise the ability to remind the users of their meetings, a pop up reminder with the details of the meetings are shown to the user. The user will just have to acknowledge it. The pop up reminder activates and provides the details of the users' next meeting in 24 hours. As you can see from the Figure 5.8.1, there are sufficient details of the next meeting and the extra button is for the user to confirm the reminder.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Reminder.png" alt="Reminder" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.13.1 : Reminder for single meeting</em></p>
+</div>
+<div class="paragraph">
+<p>Implementation:<br>
+The creation of the pop up starts if there is a meeting on the day itself by the calling of <code>MeetingAlert</code> class during the opening of the application. The implementation of meeting pop up reminder ultilises <code>javafx.stage.Stage</code>. Before the instantiation of the <code>MeetingAlert</code> class, there will be a check if the next meeting is a group meeting or normal meeting. Subsequently, the results will be shown on the reminder itself, shown in Figure 5.8.2.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/Reminder(1).png" alt="Reminder(1)" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.13.2 : Reminder for group meeting</em></p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Ways to be implemented as a reminder of the urgency of the meeting<br>
+<strong>Alternative 1 (current choice):</strong> A pop-up reminder to show meeting on the current day, furthermore working with the colours applied to meeting card<br>
+<strong>Pros:</strong> Will be a better reminder to users and easy to implement<br>
+<strong>Cons:</strong> Might not be as appealing to some users.<br>
+<strong>Alternative 2 :</strong> Scrap the colours indicators for individual cards<br>
+<strong>Pros:</strong> Might be more appealing to some users.<br>
+<strong>Cons:</strong> Colour cards itself might not be significant enough to remind the users</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-automatic-deletion-of-past-meetings"><a class="link" href="#enhancement-added-automatic-deletion-of-past-meetings">Enhancement Added: Automatic deletion of past meetings</a></h3>
+<div class="sect3">
+<h4 id="external-behavior-3"><a class="link" href="#external-behavior-3">External behavior</a></h4>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="auto-deletion-of-meeting-cards"><a class="link" href="#auto-deletion-of-meeting-cards">Auto Deletion of Meeting Cards</a></h3>
+<div class="paragraph">
+<p>Upon start up of the application, meetings which have already passed the current time of log in will be deleted and no
+longer be shown</p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification-3"><a class="link" href="#justification-3">Justification</a></h4>
+<div class="paragraph">
+<p>In order for <em>ScheduBook</em> to be more user-friendly and convenient, automatic deletion of meetings that have past the scheduled date and time should be implemented, since there is no need for the application to remind the user of an overdue meeting.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h4>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="automatic-deletions-of-meetings"><a class="link" href="#automatic-deletions-of-meetings">Automatic Deletions of Meetings</a></h3>
+<div class="paragraph">
+<p>Since, meetings that have been attended or missed are not needed in the meeting reminders anymore, we found a need for <em>ScheduBook</em> to manage the meetings and delete them, without the need for user to manually delete them.</p>
+</div>
+<div class="paragraph">
+<p>Implementation:<br>
+When <em>ScheduBook</em> is being booted up, the application loads up <code>addressbook</code>.xml file which stores the record of the saved file from the previous boot up of <em>ScheduBook</em>. Hence, using <code>LocalDateTime</code> classes and methods, any meetings that have dates before the time the user boot up <em>ScheduBook</em> will not be added to the <code>filteredMeetingList</code> that is used to replace the pre-loaded list as you can see in the code snippet below. Hence, the newest list will not include those meetings and further saved back to the <code>addressbook</code>.xml file when user shut down <em>ScheduBook</em>.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>for (final ReadOnlyMeeting meeting : meetings) {
+            if (dateIsAfter((meeting.getDate().toString()))) {
+            //to delete meetings that have passed automatically
+                replacement.add(new Meeting(meeting));
+            }
+        }</pre>
+</div>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>private boolean dateIsAfter (String date) {
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm");
+        LocalDateTime currDate = LocalDateTime.now();
+        LocalDateTime meetDate = LocalDateTime.parse(date, formatter);
+        if (meetDate.isAfter((currDate))) {
+            return true;
+        }
+        return false;
+    }</pre>
+</div>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Ways to handle meetings that have passed the scheduled date and time<br>
+<strong>Alternative 1 (current choice):</strong> Application automatically deletes all meetings that have passed the scheduled time<br>
+<strong>Pros:</strong> User-friendly, past meetings will not obstruct the user&#8217;s usage, hence being more organised<br>
+<strong>Cons:</strong> Some users might want to save some meetings that they missed<br>
+<strong>Alternative 2 (future choice) :</strong> Have an extra tabs that stores and saves meetings that user indicates to<br>
+<strong>Pros:</strong> Satisfy the need for some user to store 'missed' meetings<br>
+<strong>Alternative 3 :</strong> Let the users handle the meetings themselves<br>
+<strong>Pros:</strong> More freedom of choice, to manage the meetings<br>
+<strong>Cons:</strong> More troublesome for users, less user-friendly</p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-proposed-search-command-by-tags"><a class="link" href="#enhancement-proposed-search-command-by-tags">Enhancement Proposed: Search command by tags</a></h3>
+<div class="paragraph">
+<p>This allows user to search contact list by tags. Hence, finding person will be easier.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-proposed-import-export-google-contacts"><a class="link" href="#enhancement-proposed-import-export-google-contacts">Enhancement Proposed: Import/export Google Contacts</a></h3>
+<div class="paragraph">
+<p>To better integrate <em>ScheduBook</em> into our users' lives, <em>ScheduBook</em> will be implementing the ability to import google contacts so that users can easily sync their own contact list to <em>ScheduBook</em>. Scheduling meeting with his/her contacts will be much more convenient.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-proposed-a-pop-up-for-clashing-meeting"><a class="link" href="#enhancement-proposed-a-pop-up-for-clashing-meeting">Enhancement Proposed: A pop-up for clashing meeting</a></h3>
+<div class="paragraph">
+<p>A pop-up reminder will be opened when user adds a meeting that is within fifteen minutes of another meeting. It is just to remind the user so that he/she will be aware that there is another meeting that are near and to make changes if necessary.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other contributions</a></h3>
+<div class="paragraph">
+<p>Contribution to <em>ScheduBook</em></p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Added Meeting Tags for meeting cards to indicate importance of meeting. (Pull requests <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/191">#191</a>)</p>
+</li>
+<li>
+<p>Added Junit Test cases (Pull requests <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/148">#148</a>, <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/141">#141</a>, <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/202">#202</a>, <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/214">#214</a>)</p>
+</li>
+<li>
+<p>Updated UI of Meeting List (Pull requests <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/54">#54</a>, <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/77">#77</a>)</p>
+</li>
+<li>
+<p>Solved UI of background colour problem (Pull requests <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/200">#200</a>)</p>
+</li>
+<li>
+<p>Created valid date regex to solve leap year bug (Pull request <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/187">#187</a>)</p>
+</li>
+<li>
+<p>Added Coverall for whole project repo (<a href="https://coveralls.io/github/CS2103AUG2017-T09-B2/main">Coverall</a>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-fpga-audio-fx-verilog-programming-for-ee2020-in-nus"><a class="link" href="#project-fpga-audio-fx-verilog-programming-for-ee2020-in-nus">Project: FPGA audio Fx (Verilog programming for EE2020 in NUS)</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2017-11-13 11:59:09 +00:00
+</div>
+</div>
+</body>
+</html>

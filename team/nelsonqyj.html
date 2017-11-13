@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.3">
+<title>Nelson Quek Yee Jiel - Project Portfolio</title>
+<link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>Nelson Quek Yee Jiel - Project Portfolio</h1>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="project-schedubook"><a class="link" href="#project-schedubook">Project: ScheduBook</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><em>ScheduBook</em> a desktop address book application intended for students to plan and schedule their meetings with their peers, tutors or professors. The user interacts with it using a CLI, and it has a GUI created with JavaFX. It is written in Java, and has about 9 kLoC(Lines of Code).</p>
+</div>
+<div class="paragraph">
+<p>This project is a product of the module, Software Engineering, CS2103T, in NUS. <em>ScheduBook</em> is proudly developed by my team based on <a href="https://github.com/se-edu/addressbook-level4">AddressBook(Level4)</a>, and by <a href="https://se-edu.github.io/">SE-EDU</a> team, whose initial address book application was created to be used for teaching Software Engineering principles.</p>
+</div>
+<div class="paragraph">
+<p><strong>Code contributed</strong>: [<a href="https://github.com/CS2103AUG2017-T09-B2/main/blob/master/collated/main/nelsonqyj.md">Functional code</a>] [<a href="https://github.com/CS2103AUG2017-T09-B2/main/blob/master/collated/test/nelsonqyj.md">Test code</a>] {give links to collated code files}</p>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-addmeeting-selectmeeting-googlemaps"><a class="link" href="#enhancement-added-addmeeting-selectmeeting-googlemaps">Enhancement Added: AddMeeting, SelectMeeting, GoogleMaps</a></h3>
+<div class="sect3">
+<h4 id="external-behavior"><a class="link" href="#external-behavior">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="adding-a-meeting-code-addmeeting-code"><a class="link" href="#adding-a-meeting-code-addmeeting-code">Adding a meeting: <code>addmeeting</code></a></h3>
+<div class="paragraph">
+<p>If you need to schedule a meeting with the one of your contact in your contact list, you can add meeting with him so that the meeting will be shown at the meeting list panel and when the deadline of the meeting approaches, you will be reminded!</p>
+</div>
+<div class="paragraph">
+<p>Adds a meeting to the address book<br>
+Format: <code>(am)addmeeting [i/INDEXES] [n/NAME] [d/DATE_TIME] [l/LOCATION] [t/IMPORTANCE]</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Input format for Date and Time is "DD-MM-YYYY HH:MM"
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Input format for <code>IMPORTANCE</code> is 0-2.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Adds meeting with person at the specified <code>INDEX</code>. The index refers to the index number shown in the last person listing. The index *must be a positive integer 1,2,3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>The <code>IMPORTANCE</code> of the meeting will be  :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Most important : 2</p>
+</li>
+<li>
+<p>Normal :1</p>
+</li>
+<li>
+<p>Least important: 0</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Creation of group meetings</p>
+<div class="ulist">
+<ul>
+<li>
+<p>You can create meetings with different people with their individual index from the contact list. <code>Meeting Card</code> like <em>Figure 6A</em>  will be created. This meeting card consists of the <code>Name</code> and <code>Phone</code> of the person you are meeting with. You just have to scroll on the <code>Person</code> information on the card.</p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/MeetingGroup.png" alt="MeetingGroup" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.8.1: Meeting Cards for Group Meeting</em></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>When you are attempting to add a meeting with the same date and time as a pre-existing one in ScheduBook, the following
+error will be shown, preventing you from having 2 different meetings with exactly the same date and time</p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/MeetingClash.png" alt="MeetingClash" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.8.2: Clash Meeting Error</em></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addmeeting i/1 n/Study d/31-10-2017 21:00 l/School of Computing, NUS t/1</code></p>
+</li>
+<li>
+<p><code>addmeeting i/1 2 3 n/Project meeting d/27-12-2017 08:30 l/iCube Auditorium, NUS t/2</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selecting-a-meeting-code-selectmeeting-code"><a class="link" href="#selecting-a-meeting-code-selectmeeting-code">Selecting a meeting : <code>selectmeeting</code></a></h3>
+<div class="paragraph">
+<p>You can use this command to search for the location of your destination of the meeting on GoogleMap. From here, you can also add your current location to find out more about the nearest/fastest route to your destination.</p>
+</div>
+<div class="paragraph">
+<p>Selects the meeting identified by the index number used in the last meeting listing.<br>
+Format: <code>(sm)selectmeeting INDEX</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/googlemaps.png" alt="googlemaps" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 7: Google Map</em></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Selects the meeting at the specified <code>INDEX</code> and loads the GoogleMaps with the location of meeting as the destination.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the most recent listing.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listmeeting</code><br>
+<code>selectmeeting 5</code><br>
+Selects the 5th meeting in the address book.</p>
+</li>
+<li>
+<p><code>findmeeting Alex</code><br>
+<code>selectmeeting 1</code><br>
+Selects the 1st meeting in the results of the <code>findmeeting</code> command.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="loading-of-meeting-location-in-google-maps"><a class="link" href="#loading-of-meeting-location-in-google-maps">Loading of Meeting Location in Google Maps</a></h3>
+<div class="paragraph">
+<p>Upon selecting a meeting, the location of meeting will be automatically entered as the destination in Google Maps. The detailed navigational route and directions can be obtained thereafter.
+The screenshot below shows the loaded Google Maps upon entering the <code>selectmeeting</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/googlemaps.png" alt="googlemaps" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.5.1: GoogleMaps</em></p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification"><a class="link" href="#justification">Justification</a></h4>
+<div class="paragraph">
+<p>{Justify the need for, and the current design (i.e. external behavior) of, the feature}</p>
+</div>
+<div class="paragraph">
+<p>There is a need for users, especially students, to properly plan their important meetings. Thus, the addmeeting feature is implemented to allow users
+to create meetings with existing contacts and to be reminded of the meeting when it is due. Furthermore, by using the
+selectmeeting command, the location of the meeting will be automatically loaded into Google Maps as the destination and all the user
+needs to do is just to input their current location and the directions to the meeting location will be shown. This allows the
+user to properly plan their time needed and route to meeting locations.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="add-meeting"><a class="link" href="#add-meeting">Add Meeting</a></h3>
+<div class="paragraph">
+<p>The add meeting command inherits from UndoableCommand which allows user to add meeting with the following parameters: 'INDEX' of person in the last person listing,
+'Name' of Meeting, 'Date and Time' of Meeting, 'Location' of Meeting, and lastly, 'Importance' of Meeting.</p>
+</div>
+<div class="paragraph">
+<p>Implementation:</p>
+</div>
+<div class="paragraph">
+<p>When the <code>addmeeting</code> command is called with the appropriate parameters, an instance of the <code>Meeting</code> object is created with the
+corresponding parameters. For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">addmeeting <span class="integer">7</span> n/Shopping d/<span class="integer">31</span>-<span class="integer">10</span>-<span class="integer">2017</span> <span class="integer">16</span>:<span class="octal">00</span> l/Hillion Mall t/<span class="integer">1</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Creates an object with the following parameters</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">MeetingName: Shopping
+DateTime: <span class="integer">31</span>-<span class="integer">10</span>-<span class="integer">2017</span> <span class="integer">16</span>:<span class="octal">00</span>
+PersonName: Alex Yeo
+PhoneNum: <span class="integer">87438807</span>
+Location: Hillion Mall
+MeetingTag: <span class="integer">1</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Furthermore, the <code>INDEX</code> of person provided would allow the newly-created <code>Meeting</code> object to get the name as well as phone number
+of the corresponding contact as shown in the example above.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram below shows how AddMeeting operation works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/addMeetingSequenceDiagram.png" alt="addMeetingSequenceDiagram" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.5.1 : Sequence diagram of Add Meeting</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="select-meeting"><a class="link" href="#select-meeting">Select Meeting</a></h3>
+<div class="paragraph">
+<p>The select meeting command inherits from Command which allows user to select a meeting with the following parameters:
+'INDEX' of meeting in the last meeting listing.</p>
+</div>
+<div class="paragraph">
+<p>Implementation:</p>
+</div>
+<div class="paragraph">
+<p>When the <code>selectmeeting</code> is called with the appropriate parameters given, the Events center would create and post an instance of this as a new request event.
+This request event is then handled by the Browser Panel which loads the designated meeting page, Google Maps, with the meeting location loaded into the
+destination.</p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> Purpose and use for selecting a meeting<br>
+<strong>Alternative 1 (current implementation):</strong> Google Maps is loaded in the browser panel<br>
+<strong>Pros:</strong> Allows developer to make use of the already established maps.<br>
+<strong>Cons:</strong> Requires user to input valid addresses instead of user-based inputs like "Alex&#8217;s Home".<br>
+<strong>Alternative 2 (future option):</strong> Allows user to choose what to load at the browser panel such as connecting to social media platforms to interact with meeting partners<br>
+<strong>Pros:</strong> Improve flexibility and choices to suit different needs of users.</p>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-proposed-add-follow-up-meetings"><a class="link" href="#enhancement-proposed-add-follow-up-meetings">Enhancement Proposed: Add follow-up meetings</a></h3>
+<div class="paragraph">
+<p>Allows user to continue to add on from the original meeting which keeps track and archive the previous meeting details
+such as location and meeting partners.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other contributions</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Updated the GUI color scheme (Pull requests <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/103" class="bare">https://github.com/CS2103AUG2017-T09-B2/main/pull/103</a>, <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/110" class="bare">https://github.com/CS2103AUG2017-T09-B2/main/pull/110</a>)</p>
+</li>
+<li>
+<p>Wrote additional tests to improve coverage (Pull requests <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/125" class="bare">https://github.com/CS2103AUG2017-T09-B2/main/pull/125</a>, <a href="https://github.com/CS2103AUG2017-T09-B2/main/pull/127" class="bare">https://github.com/CS2103AUG2017-T09-B2/main/pull/127</a>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="project-fpga-design-project-real-time-audio-effects-verilog-programming-in-digital-fundamentals-ee2020"><a class="link" href="#project-fpga-design-project-real-time-audio-effects-verilog-programming-in-digital-fundamentals-ee2020">Project: FPGA Design Project: Real-Time Audio Effects (Verilog Programming in Digital Fundamentals EE2020)</a></h2>
+<div class="sectionbody">
+
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2017-11-13 11:59:09 +00:00
+</div>
+</div>
+</body>
+</html>

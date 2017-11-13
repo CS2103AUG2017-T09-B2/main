@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="Asciidoctor 1.5.3">
+<title>Ng Kheng Yi - Project Portfolio</title>
+<link rel="stylesheet" href="../stylesheets/gh-pages.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="../stylesheets/coderay-asciidoctor.css">
+</head>
+<body class="article">
+<div id="header">
+<h1>Ng Kheng Yi - Project Portfolio</h1>
+</div>
+<div id="content">
+<div class="sect1">
+<h2 id="project-schedubook"><a class="link" href="#project-schedubook">Project: Schedubook</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Schedubook is a desktop address book application which acts as both an address book and also acts as an aide for
+the scheduling of meetings, catering mainly to students. In addition to storing contacts and the information of
+meetings, Schedubook is also able to remind its users of upcoming meetings through the use of a popup and colours to
+indicate the urgency of certain meetings. The user interacts with it using a CLI, and it has a GUI created with JavaFX.</p>
+</div>
+<div class="paragraph">
+<p>The purpose of this portfolio is to showcase the contributions that I have made towards the building of this
+application and also to justify the addition of the features or enhancements that I have made to the application.</p>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-edit-meeting"><a class="link" href="#enhancement-added-edit-meeting">Enhancement Added: Edit Meeting</a></h3>
+<div class="sect3">
+<h4 id="external-behavior"><a class="link" href="#external-behavior">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-a-meeting-code-editmeeting-code"><a class="link" href="#editing-a-meeting-code-editmeeting-code">Editing a meeting : <code>editmeeting</code></a></h3>
+<div class="paragraph">
+<p>Allows you to edits an existing meeting in the address book.<br>
+Format: <code>(em)editmeeting INDEX [n/NAME] [d/DATETIME] [l/LOCATION]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the meeting at the specified <code>INDEX</code>. The index refers to the index number shown in the last person listing
+of your contact list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>You must provide at least one of the optional fields.</p>
+</li>
+<li>
+<p>Existing values will be updated to the values that you input.</p>
+</li>
+<li>
+<p>Once a meeting is successfully edited, you will be shown the following message</p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/EditMeetingSuccess.png" alt="EditMeetingSuccess" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<em>Figure 5.12.1: Successful edited Meeting</em></p>
+</div>
+</li>
+</ul>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><em>Figure 8: Successful edited Meeting</em>
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 5d8f76556fa8149fc7685051be83154dad2da591</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>editmeeting 1 n/Shopping l/Clementi</code><br>
+Edits the name and location of the 1st meeting to be <code>Shopping</code> and <code>Clementi</code> respectively.</p>
+</li>
+<li>
+<p><code>em 3 d/31-12-2017 00:00</code><br>
+Edits the date of the 3rd meeting in the meeting list to the respective date.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification"><a class="link" href="#justification">Justification</a></h4>
+<div class="paragraph">
+<p>Addition of the <code>editmeeting</code> command allows the changing of details a <code>Meeting</code> object created by the user when required. For
+example the location of a set meeting might be changed after the creation of the meeting and hence the <code>editmeeting</code> command would
+be required to reflect this change in ScheduBook.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation"><a class="link" href="#implementation">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="edit-meeting"><a class="link" href="#edit-meeting">Edit Meeting</a></h3>
+<div class="paragraph">
+<p>The edit meeting command is an undoable command which allows the user to edit the <code>MeetingName</code>, <code>DateTime</code> or <code>Place</code> of
+a created <code>Meeting</code> object.</p>
+</div>
+<div class="paragraph">
+<p>Implementation:</p>
+</div>
+<div class="paragraph">
+<p>When the <code>editmeeting</code> command is called with the appropriate parameters given, an instance of the <code>Meeting</code> object is created
+with the corresponding parameters. For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">editmeeting <span class="integer">2</span> n/Lunch l/Jurong East Mall</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Creates an object with the following parameters</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">MeetingName:Lunch
+DateTime: <span class="predefined-constant">null</span>
+Place: Jurong East Mall</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This instance of the object <code>Meeting</code> is then compared to the preexisting <code>Meetings</code> in the addressbook corresponding
+to the index that was given in the command line which for the example above is <code>Index</code> 2. The respective parameters
+will then be replaced accordingly with the ones that were instantiated. As shown also, parameters that were not declared
+(in the case of the example, it was DateTime), are defaulted to be null and will not be changed in the actual <code>Meeting</code>
+object.</p>
+</div>
+<div class="paragraph">
+<p>When given invalid inputs, the <code>editmeeting</code> command shares some of the  exceptions
+which are also thrown by the <code>addmeeting</code> command. They are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>DuplicateMeetingException</code>: Compares the edited Meeting object with the other Meeting objects in the address book
+and this exception is thrown when there is a duplicate object with the same parameters.</p>
+</li>
+<li>
+<p><code>MeetingNotFoundException</code> : Exception is thrown when the index provided to the <code>editmeeting</code> command
+is referring to the invalid index of a <code>Meeting</code> object in the addressbook</p>
+</li>
+<li>
+<p><code>MeetingBeforeCurrDateException</code> : Exception is thrown when the date of the edited
+Meeting is earlier than that of the current system time, this exception is thrown.</p>
+</li>
+<li>
+<p><code>MeetingClashException</code> : Exception is thrown when the DateTime of the editedmeeting is
+the same as one of the preexisting Meetings in the addressbook.</p>
+</li>
+</ul>
+</div>
+<div class="sect3">
+<h4 id="design-considerations"><a class="link" href="#design-considerations">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> how <code>EditMeetingCommand</code> executes<br>
+<strong>Alternative 1 :</strong> Comparing the different parameters individually without the creation
+ of a new instance of a <code>Meeting</code><br>
+<strong>Pros:</strong> More direct and faster way of editing the different parameters of the <code>Meeting</code> object<br></p>
+</div>
+<hr>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancement-added-find-exact-meeting"><a class="link" href="#enhancement-added-find-exact-meeting">Enhancement Added: Find Exact Meeting</a></h3>
+<div class="sect3">
+<h4 id="external-behavior-2"><a class="link" href="#external-behavior-2">External behavior</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: User Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="locating-meetings-with-a-particular-person-code-findexactmeeting-code"><a class="link" href="#locating-meetings-with-a-particular-person-code-findexactmeeting-code">Locating meetings with a particular person: <code>findexactmeeting</code></a></h3>
+<div class="paragraph">
+<p>Finds and lists to you the meeting(s) with people whose names match exactly with the phrase entered.<br>
+Format: <code>(fem)findexactmeeting PHRASE</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive.<br>
+e.g <code>john tan</code> will match <code>John Tan</code></p>
+</li>
+<li>
+<p>You will not be shown meeting(s) with only part of the person&#8217;s name matching the phrase.<br>
+e.g meetings with <code>Alex Soh</code> will not be found when the phrase you input is <code>Alex</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>findexactmeeting John Tan</code><br>
+returns only the meetings with people named <code>John Tan</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindExactMeeting.png" alt="FindExactMeeting" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.14.1: Find exact meeting john tan</em></p>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+<div class="sect3">
+<h4 id="justification-2"><a class="link" href="#justification-2">Justification</a></h4>
+<div class="paragraph">
+<p>The implementation of <code>findexactmeeting</code> allows users to narrow down their search results as compared
+to when using the <code>findmeeting</code> command as the conditions for a meeting to match the search results
+are more strict. This command is useful when dealing with a large amount of meetings in the meeting list with people
+of similar names. <em>e.g, Clara Tan and Clara Soh</em></p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-2"><a class="link" href="#implementation-2">Implementation</a></h4>
+<hr>
+<div class="paragraph">
+<p><mark>Start of Extract [from: Developer Guide]</mark></p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-exact-meeting"><a class="link" href="#find-exact-meeting">Find Exact Meeting</a></h3>
+<div class="paragraph">
+<p>The find exact meeting command inherits from Command which allows users to find meetings in the meeting list with persons whose name matches the [PHRASE].</p>
+</div>
+<div class="paragraph">
+<p>Implementation:</p>
+</div>
+<div class="paragraph">
+<p>When the <code>findexactmeeting</code> command is called with the appropriate parameters, a search for the instance of the <code>Meeting</code> object.</p>
+</div>
+<div class="paragraph">
+<p>The following sequence diagram shows how the command works:</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="../images/FindExactMeetingSequence.png" alt="FindExactMeetingSequence" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.8.1 : Find Exact Meeting Sequence Diagram</em></p>
+</div>
+<div class="paragraph">
+<p>For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">findexactmeeting john tan</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Finds a meeting(s) with the following parameter as the name of the person stored in meeting</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">PHRASE: john tan</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>If none of the meetings contains the <code>PHRASE</code>, the results would show "No meetings found".</p>
+</div>
+<div class="sect3">
+<h4 id="design-considerations-2"><a class="link" href="#design-considerations-2">Design Considerations</a></h4>
+<div class="paragraph">
+<p><strong>Aspect:</strong> How to narrow down search results<br>
+<strong>Alternative 1:</strong> reducing the number of search results when more keywords are added<br>
+<strong>Pros:</strong> Allows more flexibility when searching for a specific meeting<br>
+<strong>Cons</strong> Might not be able to sufficiently narrow down search results when there is a large amount of meetings stored</p>
+</div>
+<div class="paragraph">
+<p><strong>Current Choice :</strong> Searching based on the entire name of a person<br>
+<strong>Pros:</strong> Able to significantly reduce the amount of meetings listed<br>
+<strong>Cons</strong> Restricts user to only search using one field</p>
+</div>
+<hr>
+<div class="paragraph">
+<p><mark>End of Extract</mark></p>
+</div>
+<hr>
+</div>
+</div>
+<div class="sect2">
+<h3 id="enhancements-proposed"><a class="link" href="#enhancements-proposed">Enhancements Proposed</a></h3>
+<div class="sect3">
+<h4 id="em-integration-of-google-calendar-allowing-import-and-export-of-meetings-em"><a class="link" href="#em-integration-of-google-calendar-allowing-import-and-export-of-meetings-em"><em>Integration of Google Calendar(Allowing import and export of meetings)</em></a></h4>
+<div class="sect4">
+<h5 id="external-behavior-3"><a class="link" href="#external-behavior-3">External Behavior</a></h5>
+<div class="paragraph">
+<p>Upon typing in the command <code>import</code>, the application reads all the current meetings that the user has in the current
+logged in google account and adds them to the meeting list of the application. Any invalid fields such as clashes in
+timing will not be added and instead an error will be shown to the user.</p>
+</div>
+<div class="paragraph">
+<p>Similarly, the exporting of meeting is the opposite and uses the command <code>export</code>. When the command is entered,
+meetings in the application are transferred and added to the user&#8217;s google account.</p>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-3"><a class="link" href="#implementation-3">Implementation</a></h4>
+<div class="paragraph">
+<p>When the command is given, the application parses the details of the user&#8217;s events and creates a <code>Meeting</code> object in
+Schedubook. Whilst adding the <code>Meeting</code> objects into the meetings list, the application checks whether the meetings
+that are added are valid and throws any relevant errors.</p>
+</div>
+<div class="paragraph">
+<p>Conversely, for the exporting of meetings, the details in the meeting cards are parsed and then provided to events in
+Google calendar for adding.</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="opening-of-application-on-pc-startup"><a class="link" href="#opening-of-application-on-pc-startup">Opening of application on PC startup</a></h4>
+
+</div>
+<div class="sect3">
+<h4 id="external-behavior-4"><a class="link" href="#external-behavior-4">External Behavior</a></h4>
+<div class="paragraph">
+<p>Schedubook opens on startup of the PC, helping to remind users of the meetings that are available that day</p>
+</div>
+</div>
+<div class="sect3">
+<h4 id="implementation-4"><a class="link" href="#implementation-4">Implementation</a></h4>
+<div class="paragraph">
+<p>Creation of a batch file to start the java file. Adding the batch file to the <code>Startup</code> folder for all users.</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="other-contributions"><a class="link" href="#other-contributions">Other contributions</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Updated undo command to apply to commands related to Meetings (Pull request <a href="https://github.com/CS2103AUG2017-T09-B2/main/commit/4dc2249ca6c45d4c4f104cc649226f14673d7379">#63</a>)</p>
+</li>
+<li>
+<p>Modified delete command to delete Meetings with deleted person (Pull request <a href="https://github.com/CS2103AUG2017-T09-B2/main/commit/b9db535b31628dca385586b6d69454aeb5d805be">#109</a>)</p>
+</li>
+<li>
+<p>Creation of MeetingContainsFullWordPredicate (Pull request <a href="https://github.com/CS2103AUG2017-T09-B2/main/commit/2d00ea6a15c06e3a9f4e88c1f2e6f37bbb908f3c">#149</a>)</p>
+</li>
+<li>
+<p>Addition of Junit tests for editMeetingCommand (Pull request <a href="https://github.com/CS2103AUG2017-T09-B2/main/commit/10e045790e0f608cda77973806e4f5f09f3dd8f7">#126</a>)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="footer">
+<div id="footer-text">
+Last updated 2017-11-13 11:59:09 +00:00
+</div>
+</div>
+</body>
+</html>

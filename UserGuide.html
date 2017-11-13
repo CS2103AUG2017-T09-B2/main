@@ -5,50 +5,99 @@
 <!--[if IE]><meta http-equiv="X-UA-Compatible" content="IE=edge"><![endif]-->
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="generator" content="Asciidoctor 1.5.3">
-<title>AddressBook Level 4 - User Guide</title>
+<title>ScheduBook - User Guide</title>
 <link rel="stylesheet" href="stylesheets/gh-pages.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
 <link rel="stylesheet" href="stylesheets/coderay-asciidoctor.css">
 </head>
 <body class="article">
 <div id="header">
-<h1>AddressBook Level 4 - User Guide</h1>
+<h1><em>ScheduBook </em>- User Guide</h1>
 </div>
 <div id="content">
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>By: <code>Team SE-EDU</code>      Since: <code>Jun 2016</code>      Licence: <code>MIT</code></p>
+<p>By: <code>CS2103AUG2017-T09-B2</code>      Since: <code>AUG 2017</code>      Licence: <code>MIT</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/Quote.png" alt="Quote" width="800">
+</div>
 </div>
 </div>
 <div id="toc" class="toc">
-<div id="toctitle"></div>
+<div id="toctitle">Table Of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#quick-start">1. Quick Start</a></li>
-<li><a href="#features">2. Features</a>
+<li><a href="#introduction-product-overview">1. Introduction/Product overview</a></li>
+<li><a href="#about">2. About</a></li>
+<li><a href="#quick-start">3. Quick Start</a></li>
+<li><a href="#features">4. Features</a>
 <ul class="sectlevel2">
-<li><a href="#viewing-help-code-help-code">2.1. Viewing help : <code>help</code></a></li>
-<li><a href="#adding-a-person-code-add-code">2.2. Adding a person: <code>add</code></a></li>
-<li><a href="#listing-all-persons-code-list-code">2.3. Listing all persons : <code>list</code></a></li>
-<li><a href="#editing-a-person-code-edit-code">2.4. Editing a person : <code>edit</code></a></li>
-<li><a href="#locating-persons-by-name-code-find-code">2.5. Locating persons by name: <code>find</code></a></li>
-<li><a href="#deleting-a-person-code-delete-code">2.6. Deleting a person : <code>delete</code></a></li>
-<li><a href="#selecting-a-person-code-select-code">2.7. Selecting a person : <code>select</code></a></li>
-<li><a href="#listing-entered-commands-code-history-code">2.8. Listing entered commands : <code>history</code></a></li>
-<li><a href="#undoing-previous-command-code-undo-code">2.9. Undoing previous command : <code>undo</code></a></li>
-<li><a href="#redoing-the-previously-undone-command-code-redo-code">2.10. Redoing the previously undone command : <code>redo</code></a></li>
-<li><a href="#clearing-all-entries-code-clear-code">2.11. Clearing all entries : <code>clear</code></a></li>
-<li><a href="#exiting-the-program-code-exit-code">2.12. Exiting the program : <code>exit</code></a></li>
-<li><a href="#saving-the-data">2.13. Saving the data</a></li>
+<li><a href="#home-page">4.1. Home Page</a></li>
+<li><a href="#meeting-card">4.2. Meeting Card</a></li>
+<li><a href="#meeting-card-colours">4.3. Meeting Card Colours</a></li>
+<li><a href="#meeting-alerts">4.4. Meeting Alerts</a></li>
+<li><a href="#auto-deletion-of-meeting-cards">4.5. Auto Deletion of Meeting Cards</a></li>
+<li><a href="#loading-of-meeting-location-in-google-maps">4.6. Loading of Meeting Location in Google Maps</a></li>
 </ul>
 </li>
-<li><a href="#faq">3. FAQ</a></li>
-<li><a href="#command-summary">4. Command Summary</a></li>
+<li><a href="#commands">5. Commands</a>
+<ul class="sectlevel2">
+<li><a href="#viewing-help-code-help-code">5.1. Viewing help : <code>help</code></a></li>
+<li><a href="#adding-a-person-code-add-code">5.2. Adding a person: <code>add</code></a></li>
+<li><a href="#listing-all-persons-code-list-code">5.3. Listing all persons : <code>list</code></a></li>
+<li><a href="#editing-a-person-code-edit-code">5.4. Editing a person : <code>edit</code></a></li>
+<li><a href="#locating-persons-by-name-code-find-code">5.5. Locating persons by name: <code>find</code></a></li>
+<li><a href="#deleting-a-person-code-delete-code">5.6. Deleting a person : <code>delete</code></a></li>
+<li><a href="#selecting-a-person-code-select-code">5.7. Selecting a person : <code>select</code></a></li>
+<li><a href="#adding-a-meeting-code-addmeeting-code">5.8. Adding a meeting: <code>addmeeting</code></a></li>
+<li><a href="#deleting-a-meeting-code-deletemeeting-code">5.9. Deleting a meeting: <code>deletemeeting</code></a></li>
+<li><a href="#selecting-a-meeting-code-selectmeeting-code">5.10. Selecting a meeting : <code>selectmeeting</code></a></li>
+<li><a href="#listing-all-meetings-code-listmeeting-code">5.11. Listing all meetings : <code>listmeeting</code></a></li>
+<li><a href="#editing-a-meeting-code-editmeeting-code">5.12. Editing a meeting : <code>editmeeting</code></a></li>
+<li><a href="#locating-meetings-by-name-code-findmeeting-code">5.13. Locating meetings by name: <code>findmeeting</code></a></li>
+<li><a href="#locating-meetings-with-a-particular-person-code-findexactmeeting-code">5.14. Locating meetings with a particular person: <code>findexactmeeting</code></a></li>
+<li><a href="#listing-entered-commands-code-history-code">5.15. Listing entered commands : <code>history</code></a></li>
+<li><a href="#undoing-previous-command-code-undo-code">5.16. Undoing previous command : <code>undo</code></a></li>
+<li><a href="#redoing-the-previously-undone-command-code-redo-code">5.17. Redoing the previously undone command : <code>redo</code></a></li>
+<li><a href="#clearing-all-entries-code-clear-code">5.18. Clearing all entries : <code>clear</code></a></li>
+<li><a href="#exiting-the-program-code-exit-code">5.19. Exiting the program : <code>exit</code></a></li>
+<li><a href="#saving-the-data">5.20. Saving the data</a></li>
+</ul>
+</li>
+<li><a href="#faq">6. FAQ</a>
+<ul class="sectlevel2">
+<li><a href="#command-summary">6.1. Command Summary</a></li>
+</ul>
+</li>
 </ul>
 </div>
 </div>
 <div class="sect1">
-<h2 id="quick-start"><a class="link" href="#quick-start">1. Quick Start</a></h2>
+<h2 id="introduction-product-overview"><a class="link" href="#introduction-product-overview">1. Introduction/Product overview</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The <em>ScheduBook </em> is an application that helps students like you create and store a list of contacts and also helps you schedule your meetings so that you can better manage your time with your friends, peers or even your professors or teachers. You can use <em>Schedubook </em>to remind you of a certain meeting you have on a day and <em>Schedubook </em>will further provide you with the relevant information and the location of the scheduled meeting.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="about"><a class="link" href="#about">2. About</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>This user guide provides an overview of all commands that you can use in <em>ScheduBook </em>to set up or schedule your meetings and shows you how to get started using <em>ScheduBook.</em></p>
+</div>
+<div class="paragraph">
+<p>This user guide gives you the information of how the urgency of your scheduled meetings are presented to you.</p>
+</div>
+<div class="paragraph">
+<p>All commands are explained and demonstrated with examples that shows you the results of each command input by you.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="quick-start"><a class="link" href="#quick-start">3. Quick Start</a></h2>
 <div class="sectionbody">
 <div class="olist arabic">
 <ol class="arabic">
@@ -69,7 +118,7 @@ This app will not work with earlier versions of Java 8.
 </div>
 </li>
 <li>
-<p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/se-edu/addressbook-level4/releases">here</a>.</p>
+<p>Download the latest <code>addressbook.jar</code> <a href="https://github.com/CS2103AUG2017-T09-B2/main/releases">here</a>.</p>
 </li>
 <li>
 <p>Copy the file to the folder you want to use as the home folder for your Address Book.</p>
@@ -78,8 +127,17 @@ This app will not work with earlier versions of Java 8.
 <p>Double-click the file to start the app. The GUI should appear in a few seconds.</p>
 <div class="imageblock">
 <div class="content">
-<img src="images/Ui.png" alt="Ui" width="790">
+<img src="images/AddresbookLabels.png" alt="AddresbookLabels" width="790">
 </div>
+</div>
+<div class="paragraph">
+<p><em>Figure 3.1: Application GUI</em></p>
+</div>
+<div class="paragraph">
+<p>&#160;a. Command Box  &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; b. Message Box<br>
+&#160;c. Contacts List &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;
+d. Meetings List<br>
+&#160;e. Footer bar</p>
 </div>
 </li>
 <li>
@@ -94,26 +152,149 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <p><strong><code>list</code></strong> : lists all contacts</p>
 </li>
 <li>
-<p><strong><code>add</code></strong><code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
+<p><strong><code>add</code></strong> <code>n/John Doe p/98765432 e/johnd@example.com a/John street, block 123, #01-01</code> : adds a contact named <code>John Doe</code> to the Address Book.</p>
 </li>
 <li>
-<p><strong><code>delete</code></strong><code>3</code> : deletes the 3rd contact shown in the current list</p>
+<p><strong><code>delete</code></strong> <code>3</code> : deletes the 3rd contact shown in the current list</p>
 </li>
 <li>
-<p><strong><code>exit</code></strong> : exits the app</p>
+<p><strong><code>addmeeting</code></strong> <code>2 n/Shopping d/01-01-01-2020 12:00 l/Orchard Road</code> adds a meeting with the 2nd contact shown in the current list</p>
+</li>
+<li>
+<p><strong><code>exit</code></strong> : exits the application</p>
 </li>
 </ul>
 </div>
 </li>
 <li>
-<p>Refer to the <a href="#features">Features</a> section below for details of each command.</p>
+<p>Refer to the <a href="#features">Features</a> section below for more details of each command.</p>
 </li>
 </ol>
 </div>
 </div>
 </div>
 <div class="sect1">
-<h2 id="features"><a class="link" href="#features">2. Features</a></h2>
+<h2 id="features"><a class="link" href="#features">4. Features</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="home-page"><a class="link" href="#home-page">4.1. Home Page</a></h3>
+<div class="paragraph">
+<p>When you open ScheduBook, you are greeted with a background image which is your home page.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/splash.jpg" alt="splash" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.1: Home Page</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="meeting-card"><a class="link" href="#meeting-card">4.2. Meeting Card</a></h3>
+<div class="paragraph">
+<p>The meeting card provides you the information of the meetings that you have scheduled. As you can see from the Figure 2, the <code>NameMeeting</code>, <code>DateTime</code>, <code>PersonToMeet</code>, <code>PhoneNum</code> and <code>Location</code> are all shown to remind you of your certain meeting.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/MeetingCard.png" alt="MeetingCard" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.1.1: Meeting Card</em></p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="meeting-card-colours"><a class="link" href="#meeting-card-colours">4.3. Meeting Card Colours</a></h3>
+<div class="paragraph">
+<p>To show you the nearing of upcoming meetings, colours are assigned to the card by comparing the date and time in the meeting
+ class to the date and time of the log in. The meanings of the different assigned colours are:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>darkRed</code> : Meeting is in next 24 hours.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/MeetingCard1.png" alt="MeetingCard1" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.2.1: Dark red Meeting Card</em></p>
+</div>
+</li>
+<li>
+<p><code>red</code> : Meeting is in next 48 hours.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/MeetingCard2.png" alt="MeetingCard2" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.2.2: Red Meeting Card</em></p>
+</div>
+</li>
+<li>
+<p><code>orangeRed</code> : Meeting is in next 72 hours.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/MeetingCard3.png" alt="MeetingCard3" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.2.3: Orange Meeting Card</em></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="meeting-alerts"><a class="link" href="#meeting-alerts">4.4. Meeting Alerts</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="images/Reminder.png" alt="Reminder" width="600">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.3.1: Pop-up Notification</em></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Upon opening up the application, if there is a meeting(s) on the same day, you will be reminded via a pop-up message</p>
+</li>
+<li>
+<p>As shown to you in the figure 2, the information regarding the next upcoming meeting is displayed in the message</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="auto-deletion-of-meeting-cards"><a class="link" href="#auto-deletion-of-meeting-cards">4.5. Auto Deletion of Meeting Cards</a></h3>
+<div class="paragraph">
+<p>Upon start up of the application, meetings which have already passed the current time of log in will be deleted and no
+longer be shown</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="loading-of-meeting-location-in-google-maps"><a class="link" href="#loading-of-meeting-location-in-google-maps">4.6. Loading of Meeting Location in Google Maps</a></h3>
+<div class="paragraph">
+<p>Upon selecting a meeting, the location of meeting will be automatically entered as the destination in Google Maps. The detailed navigational route and directions can be obtained thereafter.
+The screenshot below shows the loaded Google Maps upon entering the <code>selectmeeting</code> command.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/googlemaps.png" alt="googlemaps" width="800">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 4.5.1: GoogleMaps</em></p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="commands"><a class="link" href="#commands">5. Commands</a></h2>
 <div class="sectionbody">
 <div class="exampleblock">
 <div class="content">
@@ -134,21 +315,24 @@ e.g. typing <strong><code>help</code></strong> and pressing <kbd>Enter</kbd> wil
 <li>
 <p>Parameters can be in any order e.g. if the command specifies <code>n/NAME p/PHONE_NUMBER</code>, <code>p/PHONE_NUMBER n/NAME</code> is also acceptable.</p>
 </li>
+<li>
+<p>Abbreviations in parenthesis before the command word represents the alias used for the corresponding commands. e.g. in <code>(am)addmeeting</code>, <code>am</code> is the short form notation for the <code>addmeeting</code> command.</p>
+</li>
 </ul>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">2.1. Viewing help : <code>help</code></a></h3>
+<h3 id="viewing-help-code-help-code"><a class="link" href="#viewing-help-code-help-code">5.1. Viewing help : <code>help</code></a></h3>
 <div class="paragraph">
-<p>Format: <code>help</code></p>
+<p>Format: <code>(h)help</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">2.2. Adding a person: <code>add</code></a></h3>
+<h3 id="adding-a-person-code-add-code"><a class="link" href="#adding-a-person-code-add-code">5.2. Adding a person: <code>add</code></a></h3>
 <div class="paragraph">
 <p>Adds a person to the address book<br>
-Format: <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code></p>
+Format: <code>(a)add [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="admonitionblock tip">
 <table>
@@ -177,17 +361,17 @@ A person can have any number of tags (including 0)
 </div>
 </div>
 <div class="sect2">
-<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">2.3. Listing all persons : <code>list</code></a></h3>
+<h3 id="listing-all-persons-code-list-code"><a class="link" href="#listing-all-persons-code-list-code">5.3. Listing all persons : <code>list</code></a></h3>
 <div class="paragraph">
 <p>Shows a list of all persons in the address book.<br>
-Format: <code>list</code></p>
+Format: <code>(l)list</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">2.4. Editing a person : <code>edit</code></a></h3>
+<h3 id="editing-a-person-code-edit-code"><a class="link" href="#editing-a-person-code-edit-code">5.4. Editing a person : <code>edit</code></a></h3>
 <div class="paragraph">
 <p>Edits an existing person in the address book.<br>
-Format: <code>edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
+Format: <code>(e)edit INDEX [n/NAME] [p/PHONE] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -227,12 +411,33 @@ Edits the name of the 2nd person to be <code>Betsy Crower</code> and clears all 
 </li>
 </ul>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>Editing a person&#8217;s name or phone number also updates the details of the person in meetings with people of the same name.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p>Undo-ing an edit command <strong>WILL NOT</strong> undo changes made to meetings</p>
+</div>
+</div>
+</div>
 </div>
 <div class="sect2">
-<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">2.5. Locating persons by name: <code>find</code></a></h3>
+<h3 id="locating-persons-by-name-code-find-code"><a class="link" href="#locating-persons-by-name-code-find-code">5.5. Locating persons by name: <code>find</code></a></h3>
 <div class="paragraph">
 <p>Finds persons whose names contain any of the given keywords.<br>
-Format: <code>find KEYWORD [MORE_KEYWORDS]</code></p>
+Format: <code>(f)find KEYWORD [MORE_KEYWORDS]</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -274,10 +479,10 @@ Returns any person having names <code>Betsy</code>, <code>Tim</code>, or <code>J
 </div>
 </div>
 <div class="sect2">
-<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">2.6. Deleting a person : <code>delete</code></a></h3>
+<h3 id="deleting-a-person-code-delete-code"><a class="link" href="#deleting-a-person-code-delete-code">5.6. Deleting a person : <code>delete</code></a></h3>
 <div class="paragraph">
 <p>Deletes the specified person from the address book.<br>
-Format: <code>delete INDEX</code></p>
+Format: <code>(d)delete INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
@@ -315,17 +520,17 @@ Deletes the 1st person in the results of the <code>find</code> command.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="selecting-a-person-code-select-code"><a class="link" href="#selecting-a-person-code-select-code">2.7. Selecting a person : <code>select</code></a></h3>
+<h3 id="selecting-a-person-code-select-code"><a class="link" href="#selecting-a-person-code-select-code">5.7. Selecting a person : <code>select</code></a></h3>
 <div class="paragraph">
 <p>Selects the person identified by the index number used in the last person listing.<br>
-Format: <code>select INDEX</code></p>
+Format: <code>(s)select INDEX</code></p>
 </div>
 <div class="sidebarblock">
 <div class="content">
 <div class="ulist">
 <ul>
 <li>
-<p>Selects the person and loads the Google search page the person at the specified <code>INDEX</code>.</p>
+<p>Selects the person at the specified <code>INDEX</code> and opens a window which shows the details of the person.</p>
 </li>
 <li>
 <p>The index refers to the index number shown in the most recent listing.</p>
@@ -354,12 +559,412 @@ Selects the 1st person in the results of the <code>find</code> command.</p>
 </li>
 </ul>
 </div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+When there is a selected person, a deletion of any person will result in the reselection of the next available person,
+causing the opening of another pop-up window
+</td>
+</tr>
+</table>
+</div>
 </div>
 <div class="sect2">
-<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">2.8. Listing entered commands : <code>history</code></a></h3>
+<h3 id="adding-a-meeting-code-addmeeting-code"><a class="link" href="#adding-a-meeting-code-addmeeting-code">5.8. Adding a meeting: <code>addmeeting</code></a></h3>
+<div class="paragraph">
+<p>If you need to schedule a meeting with the one of your contact in your contact list, you can add meeting with him so that the meeting will be shown at the meeting list panel and when the deadline of the meeting approaches, you will be reminded!</p>
+</div>
+<div class="paragraph">
+<p>Adds a meeting to the address book<br>
+Format: <code>(am)addmeeting [i/INDEXES] [n/NAME] [d/DATE_TIME] [l/LOCATION] [t/IMPORTANCE]</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Input format for Date and Time is "DD-MM-YYYY HH:MM"
+</td>
+</tr>
+</table>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Input format for <code>IMPORTANCE</code> is 0-2.
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Adds meeting with person at the specified <code>INDEX</code>. The index refers to the index number shown in the last person listing. The index *must be a positive integer 1,2,3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>The <code>IMPORTANCE</code> of the meeting will be  :</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Most important : 2</p>
+</li>
+<li>
+<p>Normal :1</p>
+</li>
+<li>
+<p>Least important: 0</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Creation of group meetings</p>
+<div class="ulist">
+<ul>
+<li>
+<p>You can create meetings with different people with their individual index from the contact list. <code>Meeting Card</code> like <em>Figure 6A</em>  will be created. This meeting card consists of the <code>Name</code> and <code>Phone</code> of the person you are meeting with. You just have to scroll on the <code>Person</code> information on the card.</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/MeetingGroup.png" alt="MeetingGroup" width="200">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.8.1: Meeting Cards for Group Meeting</em></p>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>When you are attempting to add a meeting with the same date and time as a pre-existing one in ScheduBook, the following
+error will be shown, preventing you from having 2 different meetings with exactly the same date and time</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/MeetingClash.png" alt="MeetingClash" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.8.2: Clash Meeting Error</em></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>addmeeting i/1 n/Study d/31-10-2017 21:00 l/School of Computing, NUS t/1</code></p>
+</li>
+<li>
+<p><code>addmeeting i/1 2 3 n/Project meeting d/27-12-2017 08:30 l/iCube Auditorium, NUS t/2</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="deleting-a-meeting-code-deletemeeting-code"><a class="link" href="#deleting-a-meeting-code-deletemeeting-code">5.9. Deleting a meeting: <code>deletemeeting</code></a></h3>
+<div class="paragraph">
+<p>deletemeeting by index of meeting in the Meeting</p>
+</div>
+<div class="paragraph">
+<p>Deletes a meeting in the address book at the specified INDEX<br>
+Format: <code>(dm)deletemeeting INDEX</code></p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+INDEX must be a positive integer
+</td>
+</tr>
+</table>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Deletes meeting with person at the specified INDEX. The index refers to the index number shown in the meetings tab</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+An overdue meeting will be automatically deleted when you open Schedubook
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>deletemeeting 1</code></p>
+</li>
+<li>
+<p><code>deletemeeting 2</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="selecting-a-meeting-code-selectmeeting-code"><a class="link" href="#selecting-a-meeting-code-selectmeeting-code">5.10. Selecting a meeting : <code>selectmeeting</code></a></h3>
+<div class="paragraph">
+<p>You can use this command to search for the location of your destination of the meeting on GoogleMap. From here, you can also add your current location to find out more about the nearest/fastest route to your destination.</p>
+</div>
+<div class="paragraph">
+<p>Selects the meeting identified by the index number used in the last meeting listing.<br>
+Format: <code>(sm)selectmeeting INDEX</code></p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="images/googlemaps.png" alt="googlemaps" width="790">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 7: Google Map</em></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Selects the meeting at the specified <code>INDEX</code> and loads the GoogleMaps with the location of meeting as the destination.</p>
+</li>
+<li>
+<p>The index refers to the index number shown in the most recent listing.</p>
+</li>
+<li>
+<p>The index <strong>must be a positive integer</strong> <code>1, 2, 3, &#8230;&#8203;</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>listmeeting</code><br>
+<code>selectmeeting 5</code><br>
+Selects the 5th meeting in the address book.</p>
+</li>
+<li>
+<p><code>findmeeting Alex</code><br>
+<code>selectmeeting 1</code><br>
+Selects the 1st meeting in the results of the <code>findmeeting</code> command.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-all-meetings-code-listmeeting-code"><a class="link" href="#listing-all-meetings-code-listmeeting-code">5.11. Listing all meetings : <code>listmeeting</code></a></h3>
+<div class="paragraph">
+<p>You can show all the list out of your scheduled meetings after you have used <code>findmeeting</code> or <code>findexactmeeting</code> commands.</p>
+</div>
+<div class="paragraph">
+<p>Shows a list of all meetings in the address book.<br>
+Format: <code>(lm)listmeeting</code></p>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+Meetings are always sorted according to the closest date
+</td>
+</tr>
+</table>
+</div>
+</div>
+<div class="sect2">
+<h3 id="editing-a-meeting-code-editmeeting-code"><a class="link" href="#editing-a-meeting-code-editmeeting-code">5.12. Editing a meeting : <code>editmeeting</code></a></h3>
+<div class="paragraph">
+<p>Allows you to edits an existing meeting in the address book.<br>
+Format: <code>(em)editmeeting INDEX [n/NAME] [d/DATETIME] [l/LOCATION]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Edits the meeting at the specified <code>INDEX</code>. The index refers to the index number shown in the last person listing
+of your contact list. The index <strong>must be a positive integer</strong> 1, 2, 3, &#8230;&#8203;</p>
+</li>
+<li>
+<p>You must provide at least one of the optional fields.</p>
+</li>
+<li>
+<p>Existing values will be updated to the values that you input.</p>
+</li>
+<li>
+<p>Once a meeting is successfully edited, you will be shown the following message</p>
+<div class="imageblock">
+<div class="content">
+<img src="images/EditMeetingSuccess.png" alt="EditMeetingSuccess" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p>&lt;&lt;&lt;&lt;&lt;&lt;&lt; HEAD
+<em>Figure 5.12.1: Successful edited Meeting</em></p>
+</div>
+</li>
+</ul>
+</div>
+<div class="exampleblock">
+<div class="content">
+<div class="paragraph">
+<p><em>Figure 8: Successful edited Meeting</em>
+&gt;&gt;&gt;&gt;&gt;&gt;&gt; 5d8f76556fa8149fc7685051be83154dad2da591</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>editmeeting 1 n/Shopping l/Clementi</code><br>
+Edits the name and location of the 1st meeting to be <code>Shopping</code> and <code>Clementi</code> respectively.</p>
+</li>
+<li>
+<p><code>em 3 d/31-12-2017 00:00</code><br>
+Edits the date of the 3rd meeting in the meeting list to the respective date.</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="locating-meetings-by-name-code-findmeeting-code"><a class="link" href="#locating-meetings-by-name-code-findmeeting-code">5.13. Locating meetings by name: <code>findmeeting</code></a></h3>
+<div class="paragraph">
+<p>Finds meetings whose names contain any of the given keywords.<br>
+Format: <code>(fm)findmeeting KEYWORD [MORE_KEYWORDS]</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive. e.g <code>hans</code> will match <code>Hans</code></p>
+</li>
+<li>
+<p>The order of the keywords does not matter. e.g. <code>Hans Bo</code> will match <code>Bo Hans</code></p>
+</li>
+<li>
+<p>Name of meeting or the name of person user is meeting is searched.</p>
+</li>
+<li>
+<p>Only full words will be matched e.g. <code>Han</code> will not match <code>Hans</code></p>
+</li>
+<li>
+<p>Meetings matching at least one keyword will be returned (i.e. <code>OR</code> search). e.g. <code>Hans Bo</code> will return <code>Hans Gruber</code>, <code>Bo Yang</code></p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Examples:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>findmeeting John</code><br>
+Returns meetings with <code>John</code> and <code>John Doe</code></p>
+</li>
+<li>
+<p><code>findmeeting Study Shopping</code><br>
+Returns any meeting having names <code>Study</code> or <code>Shopping</code></p>
+</li>
+<li>
+<p><code>findmeeting Shopping Study John</code><br>
+Returns any meeting having <code>John</code> as the person to meet and any meetings having names <code>Study</code> and <code>Shopping</code></p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="locating-meetings-with-a-particular-person-code-findexactmeeting-code"><a class="link" href="#locating-meetings-with-a-particular-person-code-findexactmeeting-code">5.14. Locating meetings with a particular person: <code>findexactmeeting</code></a></h3>
+<div class="paragraph">
+<p>Finds and lists to you the meeting(s) with people whose names match exactly with the phrase entered.<br>
+Format: <code>(fem)findexactmeeting PHRASE</code></p>
+</div>
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>The search is case insensitive.<br>
+e.g <code>john tan</code> will match <code>John Tan</code></p>
+</li>
+<li>
+<p>You will not be shown meeting(s) with only part of the person&#8217;s name matching the phrase.<br>
+e.g meetings with <code>Alex Soh</code> will not be found when the phrase you input is <code>Alex</code>.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="paragraph">
+<p>Example:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><code>findexactmeeting John Tan</code><br>
+returns only the meetings with people named <code>John Tan</code></p>
+<div class="imageblock">
+<div class="content">
+<img src="images/FindExactMeeting.png" alt="FindExactMeeting" width="500">
+</div>
+</div>
+<div class="paragraph">
+<p><em>Figure 5.14.1: Find exact meeting john tan</em></p>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="listing-entered-commands-code-history-code"><a class="link" href="#listing-entered-commands-code-history-code">5.15. Listing entered commands : <code>history</code></a></h3>
 <div class="paragraph">
 <p>Lists all the commands that you have entered in reverse chronological order.<br>
-Format: <code>history</code></p>
+Format: <code>(his)history</code></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -377,10 +982,10 @@ Format: <code>history</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">2.9. Undoing previous command : <code>undo</code></a></h3>
+<h3 id="undoing-previous-command-code-undo-code"><a class="link" href="#undoing-previous-command-code-undo-code">5.16. Undoing previous command : <code>undo</code></a></h3>
 <div class="paragraph">
 <p>Restores the address book to the state before the previous <em>undoable</em> command was executed.<br>
-Format: <code>undo</code></p>
+Format: <code>(u)undo</code></p>
 </div>
 <div class="admonitionblock note">
 <table>
@@ -422,10 +1027,10 @@ The <code>undo</code> command fails as there are no undoable commands executed p
 </div>
 </div>
 <div class="sect2">
-<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">2.10. Redoing the previously undone command : <code>redo</code></a></h3>
+<h3 id="redoing-the-previously-undone-command-code-redo-code"><a class="link" href="#redoing-the-previously-undone-command-code-redo-code">5.17. Redoing the previously undone command : <code>redo</code></a></h3>
 <div class="paragraph">
 <p>Reverses the most recent <code>undo</code> command.<br>
-Format: <code>redo</code></p>
+Format: <code>(r)redo</code></p>
 </div>
 <div class="paragraph">
 <p>Examples:</p>
@@ -454,21 +1059,21 @@ The <code>redo</code> command fails as there are no <code>undo</code> commands e
 </div>
 </div>
 <div class="sect2">
-<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">2.11. Clearing all entries : <code>clear</code></a></h3>
+<h3 id="clearing-all-entries-code-clear-code"><a class="link" href="#clearing-all-entries-code-clear-code">5.18. Clearing all entries : <code>clear</code></a></h3>
 <div class="paragraph">
 <p>Clears all entries from the address book.<br>
-Format: <code>clear</code></p>
+Format: <code>(c)clear</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">2.12. Exiting the program : <code>exit</code></a></h3>
+<h3 id="exiting-the-program-code-exit-code"><a class="link" href="#exiting-the-program-code-exit-code">5.19. Exiting the program : <code>exit</code></a></h3>
 <div class="paragraph">
 <p>Exits the program.<br>
 Format: <code>exit</code></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="saving-the-data"><a class="link" href="#saving-the-data">2.13. Saving the data</a></h3>
+<h3 id="saving-the-data"><a class="link" href="#saving-the-data">5.20. Saving the data</a></h3>
 <div class="paragraph">
 <p>Address book data are saved in the hard disk automatically after any command that changes the data.<br>
 There is no need to save manually.</p>
@@ -477,65 +1082,148 @@ There is no need to save manually.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="faq"><a class="link" href="#faq">3. FAQ</a></h2>
+<h2 id="faq"><a class="link" href="#faq">6. FAQ</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Q</strong>: How do I transfer my data to another Computer?<br>
 <strong>A</strong>: Install the app in the other computer and overwrite the empty data file it creates with the file that contains the data of your previous Address Book folder.</p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="command-summary"><a class="link" href="#command-summary">4. Command Summary</a></h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p><strong>Add</strong> <code>add n/NAME p/PHONE_NUMBER e/EMAIL a/ADDRESS [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</code></p>
-</li>
-<li>
-<p><strong>Clear</strong> : <code>clear</code></p>
-</li>
-<li>
-<p><strong>Delete</strong> : <code>delete INDEX</code><br>
-e.g. <code>delete 3</code></p>
-</li>
-<li>
-<p><strong>Edit</strong> : <code>edit INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</code><br>
-e.g. <code>edit 2 n/James Lee e/jameslee@example.com</code></p>
-</li>
-<li>
-<p><strong>Find</strong> : <code>find KEYWORD [MORE_KEYWORDS]</code><br>
-e.g. <code>find James Jake</code></p>
-</li>
-<li>
-<p><strong>List</strong> : <code>list</code></p>
-</li>
-<li>
-<p><strong>Help</strong> : <code>help</code></p>
-</li>
-<li>
-<p><strong>Select</strong> : <code>select INDEX</code><br>
-e.g.<code>select 2</code></p>
-</li>
-<li>
-<p><strong>History</strong> : <code>history</code></p>
-</li>
-<li>
-<p><strong>Undo</strong> : <code>undo</code></p>
-</li>
-<li>
-<p><strong>Redo</strong> : <code>redo</code></p>
-</li>
-</ul>
+<div class="sect2">
+<h3 id="command-summary"><a class="link" href="#command-summary">6.1. Command Summary</a></h3>
+<table class="tableblock frame-all grid-all spread">
+<caption class="title">Table 1. Command Cheatsheet</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+<col style="width: 25%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">COMMAND</th>
+<th class="tableblock halign-left valign-top">ALIAS</th>
+<th class="tableblock halign-left valign-top">PARAMETER</th>
+<th class="tableblock halign-left valign-top">EXAMPLE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">a</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]&#8230;&#8203;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">add n/James Ho p/22224444 e/jamesho@example.com a/123, Clementi Rd, 1234665 t/friend t/colleague</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Clear</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">c</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">clear</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">d</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INDEX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">delete 3</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">e</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INDEX [n/NAME] [p/PHONE_NUMBER] [e/EMAIL] [a/ADDRESS] [t/TAG]…</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">edit 2 n/James Lee e/jameslee@example.com</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Find</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">f</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KEYWORD [MORE_KEYWORDS]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">find James Jake</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Help</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">h</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">help</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">History</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">his</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">history</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">l</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">list</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Redo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">r</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">redo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">s</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INDEX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">select 2</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Undo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">u</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">undo</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Add Meeting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">am</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INDEX [n/NAME] [d/DATE_TIME] [l/LOCATION] [t/IMPORTANCE]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">addmeeting 5 n/Shopping d/22-11-2017 l/Vivo City t/1</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Delete Meeting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">dm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INDEX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deletemeeting 8</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Edit Meeting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">em</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INDEX [n/NAME] [d/DATETIME] [l/LOCATION]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">editmeeting 7 n/Rolls Royce d/18-12-2017 19:00 l/Beauty World Plaza</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Find Meeting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KEYWORD [MORE_KEYWORDS]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">findmeeting Shopping Study Jake</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Find Exact Meeting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fem</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">[KEYWORDS]</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">findmeeting Alex Yeoh</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">List Meeting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">-</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">listmeeting</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Select Meeting</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sm</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">INDEX</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">selectmeeting 7</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
 </div>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-09-21 15:57:58 +00:00
+Last updated 2017-11-13 11:59:09 +00:00
 </div>
 </div>
 </body>
