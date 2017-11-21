@@ -52,14 +52,15 @@
 <li><a href="#implementing-meeting-class">5.4. Implementing Meeting Class</a></li>
 <li><a href="#add-meeting">5.5. Add Meeting</a></li>
 <li><a href="#delete-meeting">5.6. Delete Meeting</a></li>
-<li><a href="#find-meeting">5.7. Find Meeting</a></li>
-<li><a href="#find-exact-meeting">5.8. Find Exact Meeting</a></li>
-<li><a href="#edit-meeting">5.9. Edit Meeting</a></li>
-<li><a href="#edit-meeting-2">5.10. Edit Meeting</a></li>
-<li><a href="#select-meeting">5.11. Select Meeting</a></li>
-<li><a href="#meeting-card">5.12. Meeting Card</a></li>
-<li><a href="#meeting-pop-up-reminder">5.13. Meeting pop up reminder</a></li>
-<li><a href="#automatic-deletions-of-meetings">5.14. Automatic Deletions of Meetings</a></li>
+<li><a href="#list-meeting">5.7. List Meeting</a></li>
+<li><a href="#find-meeting">5.8. Find Meeting</a></li>
+<li><a href="#find-exact-meeting">5.9. Find Exact Meeting</a></li>
+<li><a href="#edit-meeting">5.10. Edit Meeting</a></li>
+<li><a href="#edit-meeting-2">5.11. Edit Meeting</a></li>
+<li><a href="#select-meeting">5.12. Select Meeting</a></li>
+<li><a href="#meeting-card">5.13. Meeting Card</a></li>
+<li><a href="#meeting-pop-up-reminder">5.14. Meeting pop up reminder</a></li>
+<li><a href="#automatic-deletions-of-meetings">5.15. Automatic Deletions of Meetings</a></li>
 </ul>
 </li>
 <li><a href="#documentation">6. Documentation</a>
@@ -999,7 +1000,25 @@ from the meeting list.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-meeting"><a class="link" href="#find-meeting">5.7. Find Meeting</a></h3>
+<h3 id="list-meeting"><a class="link" href="#list-meeting">5.7. List Meeting</a></h3>
+<div class="paragraph">
+<p>The delete meeting command inherits from UndoableCommand which allows user to list meeting with the following parameters: 'lm'</p>
+</div>
+<div class="paragraph">
+<p>Implementation:</p>
+</div>
+<div class="paragraph">
+<p>When the <code>listmeeting</code> command is called, the latest MeetingList is called and shown.
+For example,</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="java">lm</code></pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="find-meeting"><a class="link" href="#find-meeting">5.8. Find Meeting</a></h3>
 <div class="paragraph">
 <p>The find meeting command inherits from Command which allows users to find meeting with the following parameters: [KEYWORD] of the meeting in the meeting list.</p>
 </div>
@@ -1032,7 +1051,7 @@ For example,</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="find-exact-meeting"><a class="link" href="#find-exact-meeting">5.8. Find Exact Meeting</a></h3>
+<h3 id="find-exact-meeting"><a class="link" href="#find-exact-meeting">5.9. Find Exact Meeting</a></h3>
 <div class="paragraph">
 <p>The find exact meeting command inherits from Command which allows users to find meetings in the meeting list with persons whose name matches the [PHRASE].</p>
 </div>
@@ -1073,7 +1092,7 @@ For example,</p>
 <p>If none of the meetings contains the <code>PHRASE</code>, the results would show "No meetings found".</p>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">5.8.1. Design Considerations</a></h4>
+<h4 id="design-considerations-3"><a class="link" href="#design-considerations-3">5.9.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> How to narrow down search results<br>
 <strong>Alternative 1:</strong> reducing the number of search results when more keywords are added<br>
@@ -1089,7 +1108,7 @@ For example,</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="edit-meeting"><a class="link" href="#edit-meeting">5.9. Edit Meeting</a></h3>
+<h3 id="edit-meeting"><a class="link" href="#edit-meeting">5.10. Edit Meeting</a></h3>
 <div class="paragraph">
 <p>The edit meeting command is an undoable command which allows the user to edit the <code>MeetingName</code>, <code>DateTime</code> or <code>Place</code> of
 a created <code>Meeting</code> object.</p>
@@ -1148,7 +1167,7 @@ the same as one of the preexisting Meetings in the addressbook.</p>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">5.9.1. Design Considerations</a></h4>
+<h4 id="design-considerations-4"><a class="link" href="#design-considerations-4">5.10.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> how <code>EditMeetingCommand</code> executes<br>
 <strong>Alternative 1 :</strong> Comparing the different parameters individually without the creation
@@ -1159,7 +1178,7 @@ the same as one of the preexisting Meetings in the addressbook.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="edit-meeting-2"><a class="link" href="#edit-meeting-2">5.10. Edit Meeting</a></h3>
+<h3 id="edit-meeting-2"><a class="link" href="#edit-meeting-2">5.11. Edit Meeting</a></h3>
 <div class="paragraph">
 <p>The edit meeting command is an undoable command which allows the user to edit the <code>MeetingName</code>, <code>DateTime</code> or <code>Place</code> of
 a created <code>Meeting</code> object.</p>
@@ -1218,7 +1237,7 @@ the same as one of the preexisting Meetings in the addressbook.</p>
 </ul>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">5.10.1. Design Considerations</a></h4>
+<h4 id="design-considerations-5"><a class="link" href="#design-considerations-5">5.11.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> how <code>EditMeetingCommand</code> executes<br>
 <strong>Alternative 1:</strong> Comparing the different parameters individually without the creation
@@ -1234,7 +1253,7 @@ the same as one of the preexisting Meetings in the addressbook.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="select-meeting"><a class="link" href="#select-meeting">5.11. Select Meeting</a></h3>
+<h3 id="select-meeting"><a class="link" href="#select-meeting">5.12. Select Meeting</a></h3>
 <div class="paragraph">
 <p>The select meeting command inherits from Command which allows user to select a meeting with the following parameters:
 'INDEX' of meeting in the last meeting listing.</p>
@@ -1248,7 +1267,7 @@ This request event is then handled by the Browser Panel which loads the designat
 destination.</p>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">5.11.1. Design Considerations</a></h4>
+<h4 id="design-considerations-6"><a class="link" href="#design-considerations-6">5.12.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Purpose and use for selecting a meeting<br>
 <strong>Alternative 1 (current implementation):</strong> Google Maps is loaded in the browser panel<br>
@@ -1260,7 +1279,7 @@ destination.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="meeting-card"><a class="link" href="#meeting-card">5.12. Meeting Card</a></h3>
+<h3 id="meeting-card"><a class="link" href="#meeting-card">5.13. Meeting Card</a></h3>
 <div class="paragraph">
 <p>The implementation of meeting card starts of from creating 'Meeting' class which resides in the Model component of this application. This meeting card also requires the UI component for this cards to be properly shown to the users.</p>
 </div>
@@ -1346,7 +1365,7 @@ destination.</p>
 <p><em>Figure 5.12.5 : Meeting Card that due within 72 hours</em></p>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">5.12.1. Design Considerations</a></h4>
+<h4 id="design-considerations-7"><a class="link" href="#design-considerations-7">5.13.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Ways to be implemented as a reminder of the urgency of the meeting<br>
 <strong>Alternative 1 (current choice):</strong> Colour is applied to meeting card<br>
@@ -1358,7 +1377,7 @@ destination.</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="meeting-pop-up-reminder"><a class="link" href="#meeting-pop-up-reminder">5.13. Meeting pop up reminder</a></h3>
+<h3 id="meeting-pop-up-reminder"><a class="link" href="#meeting-pop-up-reminder">5.14. Meeting pop up reminder</a></h3>
 <div class="paragraph">
 <p>To maximise the ability to remind the users of their meetings, a pop up reminder with the details of the meetings are shown to the user. The user will just have to acknowledge it. The pop up reminder activates and provides the details of the users' next meeting in 24 hours. As you can see from the Figure 5.8.1, there are sufficient details of the next meeting and the extra button is for the user to confirm the reminder.</p>
 </div>
@@ -1383,7 +1402,7 @@ The creation of the pop up starts if there is a meeting on the day itself by the
 <p><em>Figure 5.13.2 : Reminder for group meeting</em></p>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">5.13.1. Design Considerations</a></h4>
+<h4 id="design-considerations-8"><a class="link" href="#design-considerations-8">5.14.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Ways to be implemented as a reminder of the urgency of the meeting<br>
 <strong>Alternative 1 (current choice):</strong> A pop-up reminder to show meeting on the current day, furthermore working with the colours applied to meeting card<br>
@@ -1396,7 +1415,7 @@ The creation of the pop up starts if there is a meeting on the day itself by the
 </div>
 </div>
 <div class="sect2">
-<h3 id="automatic-deletions-of-meetings"><a class="link" href="#automatic-deletions-of-meetings">5.14. Automatic Deletions of Meetings</a></h3>
+<h3 id="automatic-deletions-of-meetings"><a class="link" href="#automatic-deletions-of-meetings">5.15. Automatic Deletions of Meetings</a></h3>
 <div class="paragraph">
 <p>Since, meetings that have been attended or missed are not needed in the meeting reminders anymore, we found a need for <em>ScheduBook</em> to manage the meetings and delete them, without the need for user to manually delete them.</p>
 </div>
@@ -1428,7 +1447,7 @@ When <em>ScheduBook</em> is being booted up, the application loads up <code>addr
 </div>
 </div>
 <div class="sect3">
-<h4 id="design-considerations-9"><a class="link" href="#design-considerations-9">5.14.1. Design Considerations</a></h4>
+<h4 id="design-considerations-9"><a class="link" href="#design-considerations-9">5.15.1. Design Considerations</a></h4>
 <div class="paragraph">
 <p><strong>Aspect:</strong> Ways to handle meetings that have passed the scheduled date and time<br>
 <strong>Alternative 1 (current choice):</strong> Application automatically deletes all meetings that have passed the scheduled time<br>
@@ -2860,7 +2879,7 @@ for <code>RemarkCommandParser</code>.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2017-11-13 13:53:54 +00:00
+Last updated 2017-11-21 09:56:14 +00:00
 </div>
 </div>
 </body>
