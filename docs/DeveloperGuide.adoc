@@ -480,6 +480,23 @@ from the meeting list.
 
 // end::deletemeeting[]
 
+// tag::listmeeting[]
+=== List Meeting
+
+The delete meeting command inherits from UndoableCommand which allows user to list meeting with the following parameters: 'lm'
+
+Implementation:
+
+When the `listmeeting` command is called, the latest MeetingList is called and shown.
+For example,
+
+[source,java]
+----
+lm
+----
+
+// end::listmeeting[]
+
 // tag::findmeeting[]
 === Find Meeting
 

@@ -330,7 +330,7 @@ Examples:
 * `deletemeeting 1`
 * `deletemeeting 2`
 
-// end::addmeeting[]
+// end::deletemeeting[]
 
 // tag::selectmeeting[]
 
